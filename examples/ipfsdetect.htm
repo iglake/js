@@ -1,0 +1,25 @@
+<title>IPFS detect</title>
+<meta charset="utf8">
+<h2>IPFS detect</h2>
+<p>IPFS GW: <a class=gw href=https://ipfs.io/><span id=GW>ipfs.io<span></a>
+<br>
+<a href=http://duckduckgo.com/?q=anonymous+democracy><img class=gw src=https://ipfs.io/ipfs/z8bvizxnq7SJmx7BxqeCs1qH22NQ8Am9Q></a>
+
+<script src=http://127.0.0.1:8088/js/inc.js></script>
+
+<script>
+  var url='http://127.0.0.1:8088/tommy/cgi-bin/ip.pl?fmt=json';
+  //url='http://iphs.ga/cgi-bin/ip.pl?fmt=json&dbug=1';
+  fetch(url)
+  .then(function(resp) {
+    return resp.json();
+   })
+  .then(function(json) {
+   console.log(JSON.stringify(json));
+   })
+  .catch(function(error) {
+    console.log(error);
+  });   
+
+
+</script>

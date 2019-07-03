@@ -1,0 +1,8 @@
+# Framapad as a website !
+
+This file is open for edit in a collaborative way !
+it uses etherpad ([framapad][fp]) and is rendered as a markdown file
+
+![fawkes]( http://ipfs.blockringtm.ml/ipfs/z8bvizxnq7SJmx7BxqeCs1qH22NQ8Am9Q )
+
+[fp]: http://framapad.org

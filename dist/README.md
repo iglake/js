@@ -4,12 +4,12 @@
 
 usable via CDN
 
- * collaborative framapad "web-page" : <http://ipfs.io/ipfs/Qmasu6Moa1iaTgf6EV5z5WbMPEjwhsdMLozteU81LEsTnv/js/examples/frama.htm>
+ * collaborative framapad "web-page" : <http://ipfs.io/ipfs/QmTswkN3p3Bd6WD8utigbDrYFoDEVatvAu2Qs4ufBLtbnr/js/examples/frama.htm>
  * other URLs :
-    - https://gateway.ipfs.io/ipfs/zdj7WaeEzHvRcHGLVDztpBn7kRRKtQ1CBbBybbCyjhuAvt1TK/www/js
-    - https://cloudflare-ipfs.com/ipfs/Qmasu6Moa1iaTgf6EV5z5WbMPEjwhsdMLozteU81LEsTnv/js
+    - https://gateway.ipfs.io/ipfs/zdj7WY52fu4U19yoWysxJA48eSi1j2EuuG2H38eQfvFVpxpLQ/www/js
+    - https://cloudflare-ipfs.com/ipfs/QmTswkN3p3Bd6WD8utigbDrYFoDEVatvAu2Qs4ufBLtbnr/js
 
- * blockRing™ hash : qm=[Qmaswse6taHXmPUVVJNdqULZxzzaigE2Qyjaz3b5MTwGk8](http://gateway.ipfs.io/ipfs/Qmaswse6taHXmPUVVJNdqULZxzzaigE2Qyjaz3b5MTwGk8)
+ * blockRing™ hash : qm=[QmR3hQ37opx9dvQghjUdXhFzJApEb17AYiXySwsxDBxRsE](http://gateway.ipfs.io/ipfs/QmR3hQ37opx9dvQghjUdXhFzJApEb17AYiXySwsxDBxRsE)
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc-fp.min.js">
