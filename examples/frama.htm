@@ -1,0 +1,24 @@
+<!DOCTYPE html><html><head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+<meta charset="utf8">
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+</head><body>
+<div><!-- --------------------------------------------- -->
+To edit this page 
+use
+<input type=button onClick="toggle('fp')" value=edit>
+or 
+<a href="#" id=template target=_blank>framapad</a>, then
+<input type=button onClick="location.reload(true)" value=refresh>
+this web page.
+<br>
+<iframe style="display:none; height:560px;" id=fp name="embed" src="//rond.numerique.ml/human4.0.txt" width=100%></iframe>
+</div><!-- --------------------------------------------- -->
+<br>
+<div id="rendered" class=content></div>
+<br>
+<div id=md style="display:none;"><!-- write your page here in markdown format -->
+<include src="index.md"><a class=include href="#">index.md</a></include>
+</div><!-- end of page -->
+
+<script src=https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc-fp.min.js></script>

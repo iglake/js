@@ -2,7 +2,7 @@
 var url;
 var buf;
 var hash = 'error';
-var url = 'http://example.com';
+var url = 'http://12.0.0.1:8080/iphs/files/web/example.com';
 
 console.log('DBUG 0 !');
 
@@ -11,14 +11,14 @@ console.log('DBUG 0 !');
 //  md5.js ...
 var script = document.createElement('script');
     script.setAttribute('type','text/javascript');
-    script.src = 'https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/md5.js';
+    script.src = '//iphs.ga/js/md5.js';
     script.onload = function () {
        console.log('DBUG 1 !');
        var digest =  md5(document.location.toString());
        hash = digest.toString().substr(0,5);
-       var frama = 'pad_' + hash;
+       var frama = 'web_' + hash;
        fpupdate(frama);
-       var buf; // get source file from frama ...
+       var buf; // get source file from ipns ...
        var request = new XMLHttpRequest();
        request.open('GET', url+'/export/txt',true);
        request.send();
@@ -44,6 +44,7 @@ var script2 = document.createElement('script');
     script2.setAttribute('type','text/javascript');
     script2.src = 'https://cdn.jsdelivr.net/npm/showdown';
    document.getElementsByTagName("head")[0].appendChild(script2);
+    //script2.src = 'http://127.0.0.1:8080/ipfs/QmeyFRD9ffRzTn4QuTWvxyQAUjEhBpF2NWZKYuYwsrmkye/showdown.min.js';
 
 
 function render(md) {
