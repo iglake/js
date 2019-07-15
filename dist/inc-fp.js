@@ -2,9 +2,19 @@
 var url;
 var buf;
 var hash = 'error';
-var url = 'http://example.com';
+var loc = document.location.toString();
+    loc = loc.replace(/#.*/,'');
 
 console.log('DBUG 0 !');
+
+if(window.location.hash) {
+  console.log(window.location)
+  var hash = window.location.hash.substring(1); // Puts hash in variable, and removes the # character
+  if (hash = 'edit') {
+    document.getElementById('panel').style.display='block';
+    toggle('fp');
+  }
+}
 
 // inject *.js :
 
@@ -14,7 +24,7 @@ var script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/md5.js';
     script.onload = function () {
        console.log('DBUG 1 !');
-       var digest =  md5(document.location.toString());
+       var digest =  md5(loc);
        hash = digest.toString().substr(0,5);
        var frama = 'pad_' + hash;
        fpupdate(frama);
@@ -26,12 +36,15 @@ var script = document.createElement('script');
           console.log('DBUG 2 !');
           resp = request.response.toString();
           buf = resp.replace(/\\\n/g,'<br>');
+          buf = buf.replace('%url%',loc);
+          buf = buf.replace('%domain%',document.location.hostname);
+          buf = buf.replace('%origin%',document.location.origin);
           render(buf);
           if (document.location.href.match(/\.htm#md/) ) {
              document.getElementById('md').innerHTML = resp;
           }
-          if ( typeof(showdown) == 'undefined' ) {
-          }
+          /* if ( typeof(showdown) == 'undefined' ) {
+          } */
        }
        request.onerror = function () {
           console.error(request.statusText);
@@ -42,7 +55,7 @@ var script = document.createElement('script');
 //  showdown.js ...
 var script2 = document.createElement('script');
     script2.setAttribute('type','text/javascript');
-    script2.src = 'https://cdn.jsdelivr.net/npm/showdown';
+    script2.src = 'https://cdn.jsdelivr.net/npm/showdown@latest/dist/showdown.min.js';
    document.getElementsByTagName("head")[0].appendChild(script2);
 
 

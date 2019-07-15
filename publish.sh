@@ -31,4 +31,5 @@ cat README.txt | sed -e "s/\$qm/$qm/g" \
     -e "s/\$rootkey/$rootkey/" -e "s/\$www/$www/" > README.md
 git add --all 
 git reset src dist/examples dist/qm.log
-#git commit
+git commit
+echo http://iglake.github.io/js/

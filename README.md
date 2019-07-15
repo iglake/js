@@ -1,24 +1,40 @@
 # js: my javascript collections
 
+a bunch of personal javascripts usable via CDN ([jsdelivr][jd] or [github][gh])
 
+ * [inc.js][1] : a javascript that replace div with class=include with the content of its data-src's attribute
+ * [inc-fp.js][2] : a javascript to include and render a markdown file from framapad
+ * [...](https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/)
 
-usable via CDN
+[1]: https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc.js
+[2]: https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc-fp.js
 
- * collaborative framapad "web-page" : <http://ipfs.io/ipfs/QmYEoDcAn9AsENFaGaVKn3XMknnoC2SFfvWQ9u5L1Npz1o/js/examples/frama.htm>
- * other URLs :
-    - https://gateway.ipfs.io/ipfs//www/js
-    - https://cloudflare-ipfs.com/ipfs/QmYEoDcAn9AsENFaGaVKn3XMknnoC2SFfvWQ9u5L1Npz1o/js
+ * other URLs for accessing the files :
+    - https://gateway.ipfs.io/ipfs/bafybeifjs3eizvknwgptuc4b76m4fqxnmozh5hrbmjvnv4bbx3adpaxi5e/www/js
+    - https://cloudflare-ipfs.com/ipfs/Qmeij7Wy4SmHAXarKRnSjmH8N7Ls5SqKHYhMwi4BtWTWHW/js
+    - https://iglake.github.io/js
 
- * blockRing™ hash : qm=[QmdtSEJ58gXbXmcY8nJxwLjYb6Sk5QDzhz3DrGCZgWiVJB](http://gateway.ipfs.io/ipfs/QmdtSEJ58gXbXmcY8nJxwLjYb6Sk5QDzhz3DrGCZgWiVJB)
+### Examples:
+
+ * collaborative framapad "web-page" : <http://ipfs.io/ipfs/Qmeij7Wy4SmHAXarKRnSjmH8N7Ls5SqKHYhMwi4BtWTWHW/js/examples/frama.htm>
+ *  or <https://iglake.github.io/js/examples/frama.htm>
+
+ *  ipfs node detection : <https://iglake/github.io/js/examples/ipfsdetect.htm>
+
+ * misc : about [how](https://www.one-tab.com/page/XuCCeOg2SkSSwTD8JzvWfw) to publish on GitHub (see <https://ipfs.io/ipfs/QmX87y253JbdLWUcd5Qdd3HaBYpoiqr8wVUYQHiuNYHAG2/>)
+
+ * blockRing™ hash : qm=[QmTfcxWuZDLA7Wvgwf8T5BTGEXY7452B3xrarzpEa4e7NS](http://gateway.ipfs.io/ipfs/QmTfcxWuZDLA7Wvgwf8T5BTGEXY7452B3xrarzpEa4e7NS)
+
+### Usage:
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc-fp.min.js">
 </script>
  ```
 
+[gh]: http://github.com/iglake/
+[jd]: https://www.jsdelivr.com/package/gh/iglake/js
 
-
-
-clone it with the commange :
+clone it with the following command :
   ```git clone https://github.com/iglake/js.git```
 
