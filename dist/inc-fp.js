@@ -37,8 +37,11 @@ var script = document.createElement('script');
           resp = request.response.toString();
           buf = resp.replace(/\\\n/g,'<br>');
           buf = buf.replace('%url%',loc);
-          buf = buf.replace('%domain%',document.location.hostname);
-          buf = buf.replace('%origin%',document.location.origin);
+          buf = buf.replace(/%domain%/g,document.location.hostname);
+          buf = buf.replace(/%origin%/g,document.location.origin);
+          buf = buf.replace(/%hash%/g,hash);
+          buf = buf.replace(/%frama%/g,frama);
+          buf = buf.replace(/{{DUCK}}/g,'http://duckduckgo.com/?q');
           render(buf);
           if (document.location.href.match(/\.htm#md/) ) {
              document.getElementById('md').innerHTML = resp;
