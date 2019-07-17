@@ -2,6 +2,9 @@
 
 var request = new XMLHttpRequest();
 var url = document.getElementsByClassName('include')[0].href;
+var loc = document.location.toString();
+    loc = loc.replace(/#.*/,'');
+
     if ( url.match(/#$/) ) {
       var p = url.lastIndexOf('/') + 1;
       var d = url.lastIndexOf('.');
@@ -19,6 +22,10 @@ var url = document.getElementsByClassName('include')[0].href;
        resp = request.response.toString()
        document.getElementById('txt').innerHTML = '<pre>'+resp+'</pre>';
           buf = resp.replace(/\\\n/g,'<br>');
+          buf = buf.replace('%url%',loc);
+          buf = buf.replace(/%domain%/g,document.location.hostname);
+          buf = buf.replace(/%origin%/g,document.location.origin);
+          buf = buf.replace(/{{DUCK}}/g,'http://duckduckgo.com/?q');
           if (! document.location.href.match(/#/) ) {
             if ( typeof(showdown) == 'undefined' ) {
               document.getElementById('rendered').innerHTML = "/!\\ showdown not loaded";

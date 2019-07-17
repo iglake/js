@@ -1,4 +1,5 @@
 body {
+  color: #324;
   /*
   background-image: URL(http://gateway.ipfs.io/ipns/Qmehn2GqxrdVL5pv1ZoWbtAKZKBosXhVzK4S5bPeut278X/abspurple.jpg);
    */
@@ -52,15 +53,24 @@ div {
 }
 h1,h2,h3,h4,h5 { text-align: left; }
 
+a:link { color: grey; }
+a:hover { color: hotpink; }
+a:visited { color: #26B; }
+a:active { color: blue; }
+
+#panel { color: black; background-color: rgba(128,128,128,0.5); }
+
 div.content {
  width: 100%;
- padding: 3em;
+ padding: 2em;
 
- background: lightyellow;
- background-image: linear-gradient(to bottom left, white,lightyellow);
+ opacity: 0.96;
+ color: white; background: rgba(1,0,2,.6); opacity: 1.0;
+
   border-radius: 4px;
   box-shadow:2px 20px 10px rgba(0, 0, 0, 0.40);
 }
+
 
 pre { overflow: auto }
 

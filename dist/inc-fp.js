@@ -94,7 +94,9 @@ function fpupdate(frama) {
     document.getElementById('rendered').innerHTML = "frama: <a href="+url+">"+url+"</a>";
     document.getElementsByClassName('include')[0].href = url;
     document.getElementsByClassName('include')[0].innerHTML = frama;
-    document.getElementById('fp').src = url+'?showControls=true&showChat=false&showLineNumbers=true&useMonospaceFont=true';
+    if (document.getElementById('fp')) {
+      document.getElementById('fp').src = url+'?showControls=true&showChat=false&showLineNumbers=true&useMonospaceFont=true';
+    }
     var elems = document.getElementsByClassName('include');
     for(var i=0; i<elems.length; i++) {
       elems[i].href = url + '/export/txt';

@@ -32,4 +32,6 @@ cat README.txt | sed -e "s/\$qm/$qm/g" \
 git add --all 
 git reset src dist/examples dist/qm.log
 git commit
-echo http://iglake.github.io/js/
+echo do a git push too !
+echo https://github.com/iglake/js/releases/
+echo https://cdn.jsdelivr.net/gh/iglake/js@latest/
