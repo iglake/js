@@ -12,7 +12,6 @@ if(window.location.hash) {
   var hash = window.location.hash.substring(1); // Puts hash in variable, and removes the # character
   if (hash = 'edit') {
     document.getElementById('panel').style.display='block';
-    toggle('fp');
   }
 }
 
@@ -88,18 +87,31 @@ function toggle(id) {
     obj.src = obj.src; // trigger a reload (??)
 }
 
+function edit(frama) {
+    var url = '//mensuel.framapad.org/p/'+frama;
+    if (document.getElementById('fp')) {
+      document.getElementById('fp').src = url+'?showControls=true&showChat=false&showLineNumbers=true&useMonospaceFont=true';
+    }
+    toggle('fp');
+}
+
 function fpupdate(frama) {
     url = '//mensuel.framapad.org/p/'+frama;
     document.getElementById('template').href = url;
     document.getElementById('rendered').innerHTML = "frama: <a href="+url+">"+url+"</a>";
     document.getElementsByClassName('include')[0].href = url;
     document.getElementsByClassName('include')[0].innerHTML = frama;
-    if (document.getElementById('fp')) {
-      document.getElementById('fp').src = url+'?showControls=true&showChat=false&showLineNumbers=true&useMonospaceFont=true';
+
+    if (document.getElementById('edit')) {
+      document.getElementById('edit').onClick = "edit('"+frama+"')";
     }
     var elems = document.getElementsByClassName('include');
-    for(var i=0; i<elems.length; i++) {
+    for(var i=1; i<elems.length; i++) {
       elems[i].href = url + '/export/txt';
+    }
+    elems = document.getElementsByClassName('framapad');
+    for(var i=0; i<elems.length; i++) {
+      elems[i].href = url;
     }
     if (document.getElementById('frama')) {
       document.getElementById('frama').innerHTML = frama;

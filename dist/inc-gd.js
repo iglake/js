@@ -1,16 +1,13 @@
-/* IPFS file as a website ! */
+/* Google doc as a website ! */
 
-var url = document.location.toString();
-var loc = url
+/*
+#once made shareable document available at :
+https://drive.google.com/file/d/1ODL1usRSwBlw5N5dn9P0l863LQGYbzr9/view?usp=sharing
+https://docs.google.com/document/d/1mfrZo4lwVmVG6DtLizCZ75_g1C-SRom2Ie6kmMRsgpw/edit?usp=sharing
+*/
+var loc = document.location.toString();
     loc = loc.replace(/#.*/,'');
 console.log('loc: ' + loc)
-
-if ( url.match(/#/) ) {
-   var hash = url.substring(url.indexOf('#')+1);
-   console.log('hash='+hash)
-   url = 'http://127.0.0.1:8080/ipfs/'+ hash;
-}
-
 
 // anonymous functions ...
 const status = resp => {
@@ -41,15 +38,28 @@ var script = document.createElement('script');
 var elems = document.getElementsByClassName('md');
 for(var i=0; i<elems.length; i++) {
    var e = elems[i]
-   var mhash = e.getAttribute('data-mhash');
-   if (typeof(mhash) != 'undefined') {
-      console.log('mhash'+i+': '+mhash);
-      var url = 'https://gateway.ipfs.io/ipfs/' + mhash;
+   var gdoc = e.getAttribute('data-gdid');
+   var url;
+   if (gdoc) {
+      console.log('gdoc'+i+': '+gdoc);
+      url = 'https://docs.google.com/document/export?id=' + gdoc + '&format=txt';
+   }
+   if (typeof(url) != 'undefined') {
+      console.log('url: '+url);
       get_url(e,i,url)
    }
 }
 
+function edit(e) {
+   var gdoc = e.getAttribute('data-gdid');
+   if (gdoc) {
+      url = 'https://docs.google.com/document/view?id=' + gdoc;
+      window.location = url;
+   }
+}
+
 function render(e,i,md) {
+   var converter = new showdown.Converter();
           md = md.replace(/\\\n/g,'<br>');
           md = md.replace(/%url%/g,loc);
           md = md.replace(/%domain%/g,document.location.hostname);
@@ -61,11 +71,9 @@ function render(e,i,md) {
       if ( typeof(showdown) == 'undefined' ) {
          e.innerHTML = "/!\\ markdown not loaded";
          script.onload = function () {
-            var converter = new showdown.Converter();
             e.innerHTML = converter.makeHtml(md);
          }
       } else {
-         var converter = new showdown.Converter();
          e.innerHTML = converter.makeHtml(md);
       }
    } else {

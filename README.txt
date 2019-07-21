@@ -19,7 +19,7 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd] or [github][gh])
  * collaborative framapad "web-page" : <http://ipfs.io/ipfs/$www/js/examples/frama.htm>
  *  or <https://iglake.github.io/js/examples/frama.htm>
 
- *  ipfs node detection : <https://iglake/github.io/js/examples/ipfsdetect.htm>
+ *  ipfs node detection : <https://iglake.github.io/js/examples/ipfsdetect.htm>
 
  * misc : about [how](https://www.one-tab.com/page/XuCCeOg2SkSSwTD8JzvWfw) to publish on GitHub (see <https://ipfs.io/ipfs/QmX87y253JbdLWUcd5Qdd3HaBYpoiqr8wVUYQHiuNYHAG2/>)
 

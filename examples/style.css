@@ -4,7 +4,7 @@ body {
   background-image: URL(http://gateway.ipfs.io/ipns/Qmehn2GqxrdVL5pv1ZoWbtAKZKBosXhVzK4S5bPeut278X/abspurple.jpg);
    */
   background-image: linear-gradient(to bottom right, magenta,blue);
-  background-image: URL(http://cloudflare-ipfs.com/ipfs/z8bvj2192MKbB7bTgLrPBvhMLmid1HpAM/abspurple.jpg);
+  background-image: URL(//cloudflare-ipfs.com/ipfs/z8bvj2192MKbB7bTgLrPBvhMLmid1HpAM/abspurple.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -12,7 +12,7 @@ body {
   background-size: cover;
   background-size: 680px auto;
   */
-  background-size: 100% auto;
+  background-size: auto 100%;
   /* min-height: 100%; */
 }
 .layer { display: none; }
@@ -50,13 +50,14 @@ div {
  box-shadow:2px 10px 4px rgba(0, 0, 0, 0.40);
  font-size: 14px;
  text-align: justify;
+ text-align-last: left;
 }
 h1,h2,h3,h4,h5 { text-align: left; }
 
-a:link { color: grey; }
+a:link { color: #26B; }
+a:visited { color: grey; }
 a:hover { color: hotpink; }
-a:visited { color: #26B; }
-a:active { color: blue; }
+a:active { color: royalblue; }
 
 #panel { color: black; background-color: rgba(128,128,128,0.5); }
 
