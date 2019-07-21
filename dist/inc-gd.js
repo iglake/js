@@ -53,7 +53,7 @@ for(var i=0; i<elems.length; i++) {
 function edit(e) {
    var gdoc = e.getAttribute('data-gdid');
    if (gdoc) {
-      url = 'https://docs.google.com/document/view?id=' + gdoc;
+      url = 'https://docs.google.com/document/edit?id=' + gdoc;
       window.location = url;
    }
 }

@@ -19,13 +19,15 @@ ipfs get -o dist /ipfs/$qm
 ipfs files rm -r /www/js
 ipfs files cp /ipfs/$qm /www/js
 www=$(ipfs files stat /www --hash)
+ww32=$(ipfs cid base32 $www)
+echo http://$ww32.ipfs.dweb.link/js
 echo https://gateway.ipfs.io/ipfs/$www/js
 
 ipfs name publish --allow-offline --key=$symb /ipfs/$www/js &
 
 rootkey=$(ipfs files stat / --hash)
 echo https://gateway.ipfs.io/ipfs/$rootkey/www/js
-echo https://cloudflare-ipfs.com/ipfs/$www/js
+echo https://$ww32.cf-ipfs.com/js
 echo https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc.min.js
 cat README.txt | sed -e "s/\$qm/$qm/g" \
     -e "s/\$rootkey/$rootkey/" -e "s/\$www/$www/" > README.md
