@@ -57,6 +57,13 @@ function edit(e) {
       window.location = url;
    }
 }
+function toggle(id) {
+    var obj = document.getElementById(id);
+    obj.style.display = (obj.style.display == "none") ? "block" : "none";
+    //obj.contentWindow.location.reload(true);
+    // obj.src = obj.src; // trigger a reload (??)
+}
+
 
 function render(e,i,md) {
    var converter = new showdown.Converter();
