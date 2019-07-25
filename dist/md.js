@@ -1,5 +1,8 @@
 
 var request = new XMLHttpRequest();
+var loc = document.location.toString();
+    loc = loc.replace(/#.*/,'');
+
 var url = document.getElementsByClassName('include')[0].href;
     if ( url.match(/#$/) ) {
       var p = url.lastIndexOf('/') + 1;
@@ -28,6 +31,12 @@ var script = document.createElement('script');
        document.getElementsByTagName("head")[0].appendChild(script);
        script.onload = function () {
           buf = resp.replace(/\\\n/g,'<br>');
+          buf = buf.replace('%loc%',loc);
+          buf = buf.replace('%url%',url);
+          buf = buf.replace(/%domain%/g,document.location.hostname);
+          buf = buf.replace(/%origin%/g,document.location.origin);
+          buf = buf.replace(/{{DUCK}}/g,'http://duckduckgo.com/?q');
+
           if (! document.location.href.match(/#/) ) {
              var converter = new showdown.Converter();
              document.getElementById('rendered').innerHTML = converter.makeHtml(buf);
