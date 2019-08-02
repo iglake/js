@@ -1,5 +1,8 @@
 // assumed https://cdn.jsdelivr.net/npm/showdown is loaded
 
+var loc = document.location.toString();
+    loc = loc.replace(/#.*/,'');
+
 var request = new XMLHttpRequest();
 var url = document.getElementsByClassName('include')[0].href;
     if ( url.match(/#$/) ) {
@@ -21,6 +24,12 @@ var url = document.getElementsByClassName('include')[0].href;
              document.getElementById('md').innerHTML = resp;
           }
           buf = resp.replace(/\\\n/g,'<br>');
+          buf = buf.replace(/%url%/g,loc);
+          buf = buf.replace(/%domain%/g,document.location.hostname);
+          buf = buf.replace(/%origin%/g,document.location.origin);
+          //buf = buf.replace(/%md5%/g,e.getAttribute('md5'));
+          buf = buf.replace(/{{DUCK}}/g,'http://duckduckgo.com/?q');
+
           if (! document.location.href.match(/#/) ) {
             if ( typeof(showdown) == 'undefined' ) {
               document.getElementById('rendered').innerHTML = "/!\\ showdown not loaded";

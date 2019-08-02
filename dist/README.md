@@ -10,20 +10,20 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd] or [github][gh])
 [2]: https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc-fp.js
 
  * other URLs for accessing the files :
-    - https://gateway.ipfs.io/ipfs/zdj7WYAWGqsZasZuFAXBeJAu667Y8Gbt4wJhVwydhLspSLKdR/www/js
-    - https://cloudflare-ipfs.com/ipfs/QmeCbzGJSiKdkwBk56aRXmVSBZoSMjMZqPKfHuM9gMeTVD/js
+    - https://gateway.ipfs.io/ipfs/zdj7WjTJYQFSgyMeisYW2TskBsE9ps8eQArjEwtHYt4hE14Fi/www/js
+    - https://cloudflare-ipfs.com/ipfs/QmSzv97Lbp2ZitJfbQuZ6ATm2yNAZ9mapwGq6ZjF8uUgjv/js
     - https://iglake.github.io/js
 
 ### Examples:
 
- * collaborative framapad "web-page" : <http://ipfs.io/ipfs/QmeCbzGJSiKdkwBk56aRXmVSBZoSMjMZqPKfHuM9gMeTVD/js/examples/frama.htm>
+ * collaborative framapad "web-page" : <http://ipfs.io/ipfs/QmSzv97Lbp2ZitJfbQuZ6ATm2yNAZ9mapwGq6ZjF8uUgjv/js/examples/frama.htm>
  *  or <https://iglake.github.io/js/examples/frama.htm>
 
  *  ipfs node detection : <https://iglake.github.io/js/examples/ipfsdetect.htm>
 
  * misc : about [how](https://www.one-tab.com/page/XuCCeOg2SkSSwTD8JzvWfw) to publish on GitHub (see <https://ipfs.io/ipfs/QmX87y253JbdLWUcd5Qdd3HaBYpoiqr8wVUYQHiuNYHAG2/>)
 
- * blockRing™ hash : qm=[QmSeiBg6DakwrvBjU84fgf8ckwyfnmPPY4211KysnoLbwF](http://gateway.ipfs.io/ipfs/QmSeiBg6DakwrvBjU84fgf8ckwyfnmPPY4211KysnoLbwF)
+ * blockRing™ hash : qm=[QmS4oRaUFTRQ2AQnqaTGxxTqjoyGP5wrVhCe4d3iFoPCRW](http://gateway.ipfs.io/ipfs/QmS4oRaUFTRQ2AQnqaTGxxTqjoyGP5wrVhCe4d3iFoPCRW)
 
 ### Usage:
 
