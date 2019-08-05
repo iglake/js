@@ -2,6 +2,7 @@
 
 symb=jscript
 key=$(ipfs key list -l | grep -w $symb | cut -d' ' -f 1)
+gitid=$(git rev-parse --short HEAD)
 
 rsync -aub $WWW/js/*.js src/
 rsync -Caub src/*.js $WWW/js/
@@ -15,6 +16,7 @@ echo http://127.0.0.1:8080/ipfs/$qm
 
 rm -rf dist/*
 find . -name \*.org -delete
+find . -name \*~ -delete
 ipfs get -o dist /ipfs/$qm
 
 ipfs files rm -r /www/js
@@ -35,7 +37,7 @@ rootkey=$(ipfs files stat / --hash)
 echo https://gateway.ipfs.io/ipfs/$rootkey/www/js
 echo cf: https://$ww32.cf-ipfs.com/js
 echo cdn: https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc.min.js
-cat README.txt | sed -e "s/\$qm/$qm/g" \
+cat README.txt | sed -e "s/\$gitid/$gitid/g" -e "s/\$qm/$qm/g" \
     -e "s/\$rootkey/$rootkey/" -e "s/\$www/$www/" > README.md
 fi
 
@@ -50,7 +52,6 @@ echo gitid: $gitid | cut -b 1-14
 echo $tic: $gitid >> revs.log
 fi
 echo "# do : "
-#echo git commit
 echo git push
 echo url: https://github.com/iglake/js/releases/
 echo url: https://cdn.jsdelivr.net/gh/iglake/js@latest/

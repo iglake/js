@@ -28,6 +28,10 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd] or [github][gh])
 ### Usage:
 
 ```html
+<!-- previous revision: $gitid
+<script src="https://cdn.statically.io/gh/iglake/js/$gitid/dist/inc-fp.js">
+-->
+<!-- current revision: latest -->
 <script src="https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc-fp.min.js">
 </script>
  ```

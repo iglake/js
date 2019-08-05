@@ -24,7 +24,8 @@ var url = document.getElementsByClassName('include')[0].href;
              document.getElementById('md').innerHTML = resp;
           }
           buf = resp.replace(/\\\n/g,'<br>');
-          buf = buf.replace(/%url%/g,loc);
+          buf = buf.replace(/%url%/g,url);
+          buf = buf.replace(/%loc%/g,loc);
           buf = buf.replace(/%domain%/g,document.location.hostname);
           buf = buf.replace(/%origin%/g,document.location.origin);
           //buf = buf.replace(/%md5%/g,e.getAttribute('md5'));
