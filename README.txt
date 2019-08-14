@@ -1,6 +1,7 @@
 # js: my javascript collections
 
-a bunch of personal javascripts usable via CDN ([jsdelivr][jd] or [github][gh])
+a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf] or [github][gh])
+(last [commit](https://github.com/iglake/js/commit/) & [releases](https://github.com/iglake/js/releases))
 
  * [inc.js][1] : a javascript that replace div with class=include with the content of its data-src's attribute
  * [inc-fp.js][2] : a javascript to include and render a markdown file from framapad
@@ -10,9 +11,11 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd] or [github][gh])
 [2]: https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc-fp.js
 
  * other URLs for accessing the files :
-    - https://gateway.ipfs.io/ipfs/$rootkey/www/js
-    - https://cloudflare-ipfs.com/ipfs/$www/js
-    - https://iglake.github.io/js
+    - <https://gateway.ipfs.io/ipfs/$rootkey/www/js>
+    - <https://cloudflare-ipfs.com/ipfs/$www/js>
+    - <https://iglake.github.io/js>
+
+[![](https://data.jsdelivr.com/v1/package/gh/iglake/js/badge)](https://www.jsdelivr.com/package/gh/iglake/js)
 
 ### Examples:
 
@@ -31,13 +34,14 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd] or [github][gh])
 <!-- previous revision: $gitid
 <script src="https://cdn.statically.io/gh/iglake/js/$gitid/dist/inc-fp.js">
 -->
-<!-- current revision: latest -->
+<!-- current revision: latest : https://github.com/iglake/js/commit/master -->
 <script src="https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc-fp.min.js">
 </script>
  ```
 
 [gh]: http://github.com/iglake/
 [jd]: https://www.jsdelivr.com/package/gh/iglake/js
+[cf]: https://cloudflare-ipfs.com/ipfs/$www/js
 
 clone it with the following command :
   ```git clone https://github.com/iglake/js.git```
