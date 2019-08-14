@@ -31,7 +31,6 @@ echo http://$ww32.ipfs.dweb.link/js
 echo url: https://gateway.ipfs.io/ipfs/$www/js
 
 echo "info: /ipfs/$www/js"
-key=$(ipfs key list -l | grep -w $symb | cut -d' ' -f1)
 echo ipns: http://127.0.0.1:8080/ipns/$key
 ipfs name publish --allow-offline --key=$symb /ipfs/$www/js &
 
@@ -43,6 +42,8 @@ echo cf: https://$ww32.cf-ipfs.com/js
 echo cdn: https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc.min.js
 cat README.txt | sed -e "s/\$ver/$ver/g" -e "s/\$gitid/$gitid/g" \
     -e "s/\$qm/$qm/g" -e "s/\$rootkey/$rootkey/" -e "s/\$www/$www/" > README.md
+else
+ echo no /www
 fi
 
 
