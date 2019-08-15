@@ -48,6 +48,4 @@ clone it with the following command :
 
 ### Last fix ...
 
-* oops forgot the "edit" id-attribute on the button in the [frama.htm](//github.com/iglake/js/blob/master/examples/frama.htm) file
-* also replace some remaining "[@latest](//cdn.jsdelivr.net/gh/iglake/js@latest/)" with "[@master](//cdn.jsdelivr.net/gh/iglake/js@master/)" in gh references
-at [jsdelivr](https://jsdelivr.com/package/gh/iglake/js?version=master)
+- minor fix in the publishing script (msg)

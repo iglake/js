@@ -53,13 +53,14 @@ git add --all
 git reset src dist/examples dist/qm.log
 git status
 date=$(date +%D);
-msg="$(echo -e '/### Last fix/+2,$p\n?### Last?+2,$d\nw\n'  | ed README.txt)";
+msg="$(echo -e '/### Last fix/+2,$p'  | ed README.txt)";
 if git commit -m "$ver: $msg on $date"; then
 gitid=$(git rev-parse HEAD)
 git tag -f -a $ver -m "tagging $gitid on $date"
 #echo gitid: ${gitid:0:9} # this is bash!
 echo gitid: $gitid | cut -b 1-14
 echo $tic: $gitid >> revs.log
+echo '/### Last fix/+2,$d'  | ed README.txt
 fi
 echo "git push : "
 git push --tags
