@@ -32,6 +32,7 @@ var loc = document.location.toString();
             } else {
              var converter = new showdown.Converter();
              document.getElementById('rendered').innerHTML = converter.makeHtml(buf);
+             document.getElementById('txt').style.display = 'none';
            }
           }
     }

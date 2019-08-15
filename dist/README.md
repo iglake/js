@@ -11,20 +11,20 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 [2]: https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc-fp.js
 
  * other URLs for accessing the files :
-    - <https://gateway.ipfs.io/ipfs/bafybeidejbqcl6hlpzphn54p5vmkihizuuagr3dlspgteix7usvmh2hhji/www/js>
-    - <https://cloudflare-ipfs.com/ipfs/QmWBUFfYqKk2RwoDNRYu86wsoMN4teHXhqmdArTt6RQaRY/js>
+    - <https://gateway.ipfs.io/ipfs/bafybeieapqydg4mtcuydw6ftv5peicqwrrp3ozmonxx5cmgpwnbzfbtmqy/www/js>
+    - <https://cloudflare-ipfs.com/ipfs/QmdVPzjDqLo9MhyxTWrq9Q436GMmCJdcx6Poio4APNwpdd/js>
     - <https://iglake.github.io/js>
 
 ### Examples:
 
- * collaborative framapad "web-page" : <http://ipfs.io/ipfs/QmWBUFfYqKk2RwoDNRYu86wsoMN4teHXhqmdArTt6RQaRY/js/examples/frama.htm>
+ * collaborative framapad "web-page" : <http://ipfs.io/ipfs/QmdVPzjDqLo9MhyxTWrq9Q436GMmCJdcx6Poio4APNwpdd/js/examples/frama.htm>
  *  or <https://iglake.github.io/js/examples/frama.htm>
 
  *  ipfs node detection : <https://iglake.github.io/js/examples/ipfsdetect.htm>
 
  * misc : about [how](https://www.one-tab.com/page/XuCCeOg2SkSSwTD8JzvWfw) to publish on GitHub (see <https://ipfs.io/ipfs/QmX87y253JbdLWUcd5Qdd3HaBYpoiqr8wVUYQHiuNYHAG2/>)
 
- * blockRing™ hash : qm=[QmP9YJWB5Kw6cRAt8wv8jDgPgzP7jL3c8JZQPTfs413Jqx](http://gateway.ipfs.io/ipfs/QmP9YJWB5Kw6cRAt8wv8jDgPgzP7jL3c8JZQPTfs413Jqx)
+ * blockRing™ hash : qm=[QmaT5UJhtTnwXcdrEzjvPjpdG6mjs2HAM9mhfoJiRj7DL1](http://gateway.ipfs.io/ipfs/QmaT5UJhtTnwXcdrEzjvPjpdG6mjs2HAM9mhfoJiRj7DL1)
 
 ### Usage:
 
@@ -39,7 +39,7 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 
 [gh]: http://github.com/iglake/
 [jd]: https://www.jsdelivr.com/package/gh/iglake/js
-[cf]: https://cloudflare-ipfs.com/ipfs/QmWBUFfYqKk2RwoDNRYu86wsoMN4teHXhqmdArTt6RQaRY/js
+[cf]: https://cloudflare-ipfs.com/ipfs/QmdVPzjDqLo9MhyxTWrq9Q436GMmCJdcx6Poio4APNwpdd/js
 
 clone it with the following command :
   ```git clone https://github.com/iglake/js.git```

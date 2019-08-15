@@ -20,7 +20,7 @@ if(window.location.hash) {
 //  md5.js ...
 var script = document.createElement('script');
     script.setAttribute('type','text/javascript');
-    script.src = 'https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/md5.js';
+    script.src = 'https://cdn.jsdelivr.net/gh/iglake/js@master/dist/md5.js';
     script.onload = function () {
        console.log('DBUG 1 !');
        var digest =  md5(loc);
