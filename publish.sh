@@ -61,9 +61,14 @@ git tag -f -a $ver -m "tagging $gitid on $date"
 echo gitid: $gitid | cut -b 1-14
 echo $tic: $gitid >> revs.log
 echo '/### Last fix/+2,$d'  | ed README.txt
+# test if tag $ver exist ...
+if git ls-remote --tags | grep "$ver"; then
+git push --delete origin "$ver"
+
+fi
 fi
 echo "git push : "
-git push --tags
+git push --follow-tags
 echo .
 echo url: https://github.com/iglake/js/releases/
 echo url: https://cdn.jsdelivr.net/gh/iglake/js@master/

@@ -49,3 +49,5 @@ clone it with the following command :
 ### Last fix ...
 
 - minor fix in the publishing script (msg)
+- added : ```git push --delete origin "$ver"``` to remove pre-existing tag $ver
+- 
