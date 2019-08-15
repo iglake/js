@@ -5,10 +5,10 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 
  * [inc.js][1] : a javascript that replace div with class=include with the content of its data-src's attribute
  * [inc-fp.js][2] : a javascript to include and render a markdown file from framapad
- * [...](https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/)
+ * [...](https://cdn.jsdelivr.net/gh/iglake/js@master/dist/)
 
-[1]: https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc.js
-[2]: https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc-fp.js
+[1]: https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc.js
+[2]: https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc-fp.js
 
  * other URLs for accessing the files :
     - <https://gateway.ipfs.io/ipfs/bafybeieapqydg4mtcuydw6ftv5peicqwrrp3ozmonxx5cmgpwnbzfbtmqy/www/js>
@@ -33,7 +33,7 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 <script src="https://cdn.statically.io/gh/iglake/js/515de9f/dist/inc-fp.js">
 -->
 <!-- current revision: latest : https://github.com/iglake/js/commit/master -->
-<script src="https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc-fp.min.js">
+<script src="https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc-fp.min.js">
 </script>
 ```
 

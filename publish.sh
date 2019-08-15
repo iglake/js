@@ -23,10 +23,10 @@ find . -name \*.org -delete
 find . -name \*~ -delete
 ipfs get -o dist /ipfs/$qm
 
-ipfs files rm -r /www/js
-ipfs files cp /ipfs/$qm /www/js
+ipfs files rm -r /root/www/js
+ipfs files cp /ipfs/$qm /root/www/js
 echo -n "www: "
-www=$(ipfs files stat /www --hash)
+www=$(ipfs files stat /root/www --hash)
 if [ "x$www" != 'x' ]; then
 ww32=$(ipfs cid base32 $www)
 echo http://$ww32.ipfs.dweb.link/js
@@ -38,10 +38,10 @@ ipfs name publish --allow-offline --key=$symb /ipfs/$www/js &
 
 
 echo -n "rootkey: "
-rootkey=$(ipfs files stat / --hash)
+rootkey=$(ipfs files stat /root --hash)
 echo https://gateway.ipfs.io/ipfs/$rootkey/www/js
 echo cf: https://$ww32.cf-ipfs.com/js
-echo cdn: https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc.min.js
+echo cdn: https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc.min.js
 cat README.txt | sed -e "s/\$ver/$ver/g" -e "s/\$gitid/$gitid/g" \
     -e "s/\$qm/$qm/g" -e "s/\$rootkey/$rootkey/" -e "s/\$www/$www/" > README.md
 else
@@ -65,4 +65,4 @@ echo "git push : "
 git push --tags
 echo .
 echo url: https://github.com/iglake/js/releases/
-echo url: https://cdn.jsdelivr.net/gh/iglake/js@latest/
+echo url: https://cdn.jsdelivr.net/gh/iglake/js@master/

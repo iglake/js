@@ -1,10 +1,12 @@
 body {
   color: #324;
-  /*
+  /* vim: nospell
   background-image: URL(http://gateway.ipfs.io/ipns/Qmehn2GqxrdVL5pv1ZoWbtAKZKBosXhVzK4S5bPeut278X/abspurple.jpg);
+  background-image: URL(https://cdn.statically.io/img/gateway.ipfs.io/ipfs/uAXAALRInChgBcBEU6G5OXefeA2hTXpu9HSBbLBrxSNASB3NreS5qcGcYhIZqCgIIAQ/sky.jpg);
+  background-image: URL(https://cloudflare-ipfs.com/ipfs/uAXAAMxItChgBcBEUwg3lDSIaAsZsl3TKfSJGL6lDQHgSDWFic3B1cnBsZS5qcGcYmpAGCgIIAQ/abspurple.jpg);
    */
   background-image: linear-gradient(to bottom right, magenta,blue);
-  background-image: URL(//cloudflare-ipfs.com/ipfs/z8bvj2192MKbB7bTgLrPBvhMLmid1HpAM/abspurple.jpg);
+  background-image: URL(//cdn.statically.io/img/gateway.ipfs.io/ipfs/uAXAALRInChgBcBEU6G5OXefeA2hTXpu9HSBbLBrxSNASB3NreS5qcGcYhIZqCgIIAQ/sky.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;

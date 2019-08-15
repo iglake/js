@@ -5,10 +5,10 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 
  * [inc.js][1] : a javascript that replace div with class=include with the content of its data-src's attribute
  * [inc-fp.js][2] : a javascript to include and render a markdown file from framapad
- * [...](https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/)
+ * [...](https://cdn.jsdelivr.net/gh/iglake/js@master/dist/)
 
-[1]: https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc.js
-[2]: https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc-fp.js
+[1]: https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc.js
+[2]: https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc-fp.js
 
  * other URLs for accessing the files :
     - <https://gateway.ipfs.io/ipfs/$rootkey/www/js>
@@ -35,7 +35,7 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 <script src="https://cdn.statically.io/gh/iglake/js/$gitid/dist/inc-fp.js">
 -->
 <!-- current revision: latest : https://github.com/iglake/js/commit/master -->
-<script src="https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/inc-fp.min.js">
+<script src="https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc-fp.min.js">
 </script>
  ```
 
@@ -48,7 +48,6 @@ clone it with the following command :
 
 ### Last fix ...
 
-* fix the edit button in "[inc-fp,js](/iglake/js/$gitid/dist/inc-fp.js)
-for [frama.htm](https://iglake.github.io/js/examples/frama.htm) to work
-properly (do not load the edit frama initially, only once the edit button is clicked)
-
+* oops forgot the "edit" id-attribute on the button in the [frama.htm](//github.com/iglake/js/blob/master/examples/frama.htm) file
+* also replace some remaining "[@latest](//cdn.jsdelivr.net/gh/iglake/js@latest/)" with "[@master](//cdn.jsdelivr.net/gh/iglake/js@master/)" in gh references
+at [jsdelivr](https://jsdelivr.com/package/gh/iglake/js?version=master)
