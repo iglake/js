@@ -1,5 +1,7 @@
 #
 
+# vim: nospell
+
 symb=jscript
 key=$(ipfs key list -l | grep -w $symb | cut -d' ' -f 1)
 gitid=$(git rev-parse --short HEAD)
@@ -50,14 +52,17 @@ fi
 git add --all 
 git reset src dist/examples dist/qm.log
 git status
-if git commit; then
+date=$(date +%D);
+msg="$(echo -e '/### Last fix/+2,$p\n?### Last?+2,$d\nw\n'  | ed README.txt)";
+if git commit -m "$ver: $msg on $date"; then
 gitid=$(git rev-parse HEAD)
-git tag -f -a $ver -m "tagging $gitid on $(date +%D)"
+git tag -f -a $ver -m "tagging $gitid on $date"
 #echo gitid: ${gitid:0:9} # this is bash!
 echo gitid: $gitid | cut -b 1-14
 echo $tic: $gitid >> revs.log
 fi
-echo "# do : "
-echo git push
+echo "git push : "
+git push --tags
+echo .
 echo url: https://github.com/iglake/js/releases/
 echo url: https://cdn.jsdelivr.net/gh/iglake/js@latest/

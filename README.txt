@@ -46,3 +46,9 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 clone it with the following command :
   ```git clone https://github.com/iglake/js.git```
 
+### Last fix ...
+
+* fix the edit button in "[inc-fp,js](/iglake/js/$gitid/dist/inc-fp.js)
+for [frama.htm](https://iglake.github.io/js/examples/frama.htm) to work
+properly (do not load the edit frama initially, only once the edit button is clicked)
+

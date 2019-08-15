@@ -5,7 +5,7 @@ var hash = 'error';
 var loc = document.location.toString();
     loc = loc.replace(/#.*/,'');
 
-console.log('DBUG 0 !');
+console.log('debug: "inc-fp.js" loaded !');
 
 if(window.location.hash) {
   console.log(window.location)
@@ -22,7 +22,7 @@ var script = document.createElement('script');
     script.setAttribute('type','text/javascript');
     script.src = 'https://cdn.jsdelivr.net/gh/iglake/js@master/dist/md5.js';
     script.onload = function () {
-       console.log('DBUG 1 !');
+       console.log('dbug: md5 loaded !');
        var digest =  md5(loc);
        hash = digest.toString().substr(0,5);
        var frama = 'pad_' + hash;
@@ -32,7 +32,7 @@ var script = document.createElement('script');
        request.open('GET', url+'/export/txt',true);
        request.send();
        request.onload = function () {
-          console.log('DBUG 2 !');
+          console.log('dbug: url:'+url+' loaded !');
           resp = request.response.toString();
           buf = resp.replace(/\\\n/g,'<br>');
           buf = buf.replace('%url%',url);
@@ -67,13 +67,13 @@ function render(md) {
    if ( typeof(showdown) == 'undefined' ) {
      document.getElementById('rendered').innerHTML = "/!\\ markdown not loaded";
      script2.onload = function () {
-        console.log('DBUG 3 !');
+        console.log('dbug: showdown not (yet) loaded !');
         if (! document.location.href.match(/#/) ) {
            document.getElementById('rendered').innerHTML = converter.makeHtml(md);
         }
      }
    } else {
-        console.log('DBUG 3bis !');
+        console.log('dbug: showdown loaded !');
            document.getElementById('rendered').innerHTML = converter.makeHtml(md);
            document.getElementById('md').style.display = 'none';
    }
@@ -90,21 +90,25 @@ function toggle(id) {
 
 function edit(frama) {
     var url = '//mensuel.framapad.org/p/'+frama;
+    console.log('info: edit '+ frama + ' !');
     if (document.getElementById('fp')) {
       document.getElementById('fp').src = url+'?showControls=true&showChat=false&showLineNumbers=true&useMonospaceFont=true';
     }
+    document.getElementById('edit').setAttribute('onClick', "javascript: toggle('fp');");
     toggle('fp');
 }
 
 function fpupdate(frama) {
     url = '//mensuel.framapad.org/p/'+frama;
+    console.log('info: fpupdate('+ frama + ') !');
     document.getElementById('template').href = url;
     document.getElementById('rendered').innerHTML = "frama: <a href="+url+">"+url+"</a>";
     document.getElementsByClassName('include')[0].href = url;
     document.getElementsByClassName('include')[0].innerHTML = frama;
 
     if (document.getElementById('edit')) {
-      document.getElementById('edit').onClick = "edit('"+frama+"')";
+      console.log('info: update edit w/ '+ frama + ' !');
+      document.getElementById('edit').setAttribute('onClick', "javascript: edit('"+frama+"');");
     }
     var elems = document.getElementsByClassName('include');
     for(var i=1; i<elems.length; i++) {
