@@ -17,7 +17,7 @@ const status = resp => {
   return Promise.reject(new Error(resp.statusText))
 }
 const get_url = (e,i,u) => {
-   fetch(u)
+   fetch(u, { mode='nocors' }
      .then(status)
      .then( resp => resp.text() )
      .then( buf => render(e,i,buf)
