@@ -1,20 +1,30 @@
 // assumed https://cdn.jsdelivr.net/npm/showdown is loaded
 
+var map = {'domain':document.location.hostname }; // map for url substitutions
+
 var loc = document.location.toString();
     loc = loc.replace(/#.*/,'');
 
 var request = new XMLHttpRequest();
 var url = document.getElementsByClassName('include')[0].href;
     if ( url.match(/#$/) ) {
-      var p = url.lastIndexOf('/') + 1;
-      var d = url.lastIndexOf('.');
+    // if ∃ fragment ⇒ take the basename of url and add .md extension
+      let p = url.lastIndexOf('/') + 1;
+      let d = url.lastIndexOf('.');
       url = url.substring(p,d) + '.md';
+    } else if (url.match(/%(\w+)%/)) {
+      let matches = url.match(/%(\w+)%/);
+      let rex = new RegExp('%'+matches[1]+'%');
+      url = url.replace(rex,map[matches[1]]);
+      console.log('url: '+url)
+    }
+    // update html for info
       var elems = document.getElementsByClassName('include');
       elems[0].innerHTML = url;
       for(var i=0; i<elems.length; i++) {
         elems[i].href = url;
       }
-    }
+
     request.open('GET', url);
     request.send();
 

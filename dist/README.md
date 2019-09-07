@@ -11,28 +11,28 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 [2]: https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc-fp.js
 
  * other URLs for accessing the files :
-    - <https://gateway.ipfs.io/ipfs/bafybeie23uz7hk5fqkudqaq7vyza6ljyysmoh554nrlefal4r5fdrhqq2y/www/js>
-    - <https://cloudflare-ipfs.com/ipfs/bafybeifye42qzejv63z5vsv7jwh6areqlkarophcnfjiuzdqc54kd4g5um/js>
+    - <https://gateway.ipfs.io/ipfs/bafybeigb7gokuv5dgpq3fhxruv2rkvbpoj5hkumfm6qxsfo4amq6q3lpxy/www/js>
+    - <https://cloudflare-ipfs.com/ipfs/bafybeihoelumyarkvfycn3foo5zo2gibdszgfzopaby3dlhoyer3fd3rbu/js>
     - <https://iglake.github.io/js>
 
 [![](https://data.jsdelivr.com/v1/package/gh/iglake/js/badge)](https://www.jsdelivr.com/package/gh/iglake/js)
 
 ### Examples:
 
- * collaborative framapad "web-page" : <http://ipfs.io/ipfs/bafybeifye42qzejv63z5vsv7jwh6areqlkarophcnfjiuzdqc54kd4g5um/js/examples/frama.htm>
+ * collaborative framapad "web-page" : <http://ipfs.io/ipfs/bafybeihoelumyarkvfycn3foo5zo2gibdszgfzopaby3dlhoyer3fd3rbu/js/examples/frama.htm>
  *  or <https://iglake.github.io/js/examples/frama.htm>
 
  *  ipfs node detection : <https://iglake.github.io/js/examples/ipfsdetect.htm>
 
  * misc : about [how](https://www.one-tab.com/page/XuCCeOg2SkSSwTD8JzvWfw) to publish on GitHub (see <https://ipfs.io/ipfs/QmX87y253JbdLWUcd5Qdd3HaBYpoiqr8wVUYQHiuNYHAG2/>)
 
- * blockRing™ hash : qm=[QmUWWeHFa1sQ63HxEneUiKtA7ZWzBhtSns972qFuBbSeQg](http://gateway.ipfs.io/ipfs/QmUWWeHFa1sQ63HxEneUiKtA7ZWzBhtSns972qFuBbSeQg)
+ * blockRing™ hash : qm=[QmUtLY3xy9JdL8QTs5dxXGAuSyyMkiVuy2X1DaEhvN4fQo](http://gateway.ipfs.io/ipfs/QmUtLY3xy9JdL8QTs5dxXGAuSyyMkiVuy2X1DaEhvN4fQo)
 
 ### Usage:
 
 ```html
-<!-- previous revision: 253345c
-<script src="https://cdn.statically.io/gh/iglake/js/253345c/dist/inc-fp.js">
+<!-- previous revision: 19f340a
+<script src="https://cdn.statically.io/gh/iglake/js/19f340a/dist/inc-fp.js">
 -->
 <!-- current revision: latest : https://github.com/iglake/js/commit/master -->
 <script src="https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc-fp.min.js">
@@ -41,7 +41,7 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 
 [gh]: http://github.com/iglake/
 [jd]: https://www.jsdelivr.com/package/gh/iglake/js
-[cf]: https://cloudflare-ipfs.com/ipfs/bafybeifye42qzejv63z5vsv7jwh6areqlkarophcnfjiuzdqc54kd4g5um/js
+[cf]: https://cloudflare-ipfs.com/ipfs/bafybeihoelumyarkvfycn3foo5zo2gibdszgfzopaby3dlhoyer3fd3rbu/js
 
 clone it with the following command :
   ```git clone https://github.com/iglake/js.git```
