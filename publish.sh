@@ -6,16 +6,20 @@ symb=jscript
 key=$(ipfs key list -l | grep -w $symb | cut -d' ' -f 1)
 gitid=$(git rev-parse --short HEAD)
 
+# synchronize w/ local files !
 rsync -aub $WWW/js/*.js src/
 rsync -Caub src/*.js $WWW/js/
 
-qm=$(ipfs add -Q -r -w src/*.js README.md examples qm.log)
+# no examples is in dist !
+qm=$(ipfs add -Q -r -w src/*.js README.md qm.log)
+#qm=$(ipfs add -Q -r -w src/*.js README.md examples qm.log)
 tic=$(date +%s)
 echo $tic: $qm >> qm.log
 echo " - $qm" >> mutable.yml
 tail -1 qm.log
 echo http://127.0.0.1:8080/ipfs/$qm
 ver=$($HOME/bin/version README.md | xyml scheduled)
+echo $ver > VERSION
 
 
 rm -rf dist/*
@@ -48,7 +52,6 @@ else
  echo no /www
 fi
 
-
 git add --all 
 git reset src dist/examples dist/qm.log
 git status
@@ -60,7 +63,7 @@ git tag -f -a $ver -m "tagging $gitid on $date"
 #echo gitid: ${gitid:0:9} # this is bash!
 echo gitid: $gitid | cut -b 1-14
 echo $tic: $gitid >> revs.log
-echo '/### Last fix/+2,$d'  | ed README.txt
+echo -e "/### Last fix/+2,\$d\nw" | ed README.txt
 # test if tag $ver exist ...
 if git ls-remote --tags | grep "$ver"; then
 git push --delete origin "$ver"
@@ -72,3 +75,4 @@ git push --follow-tags
 echo .
 echo url: https://github.com/iglake/js/releases/
 echo url: https://cdn.jsdelivr.net/gh/iglake/js@master/
+

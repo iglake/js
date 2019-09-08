@@ -1,5 +1,7 @@
 # js: my javascript collections
 
+<!-- vim: ft=markdown nospell
+-->
 a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf] or [github][gh])
 (last [commit](https://github.com/iglake/js/commit/) & [releases](https://github.com/iglake/js/releases))
 
@@ -48,6 +50,6 @@ clone it with the following command :
 
 ### Last fix ...
 
-- minor fix in the publishing script (msg)
-- added : ```git push --delete origin "$ver"``` to remove pre-existing tag $ver
-- added : domain substitution in url for inc-md.js
+- fix deletion of last fix lines in publish.sh script
+- suppress the www. from domain name
+- load a config.json and substitute de keyword from the div.md

@@ -1,5 +1,7 @@
 # js: my javascript collections
 
+<!-- vim: ft=markdown nospell
+-->
 a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf] or [github][gh])
 (last [commit](https://github.com/iglake/js/commit/) & [releases](https://github.com/iglake/js/releases))
 
@@ -11,28 +13,28 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 [2]: https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc-fp.js
 
  * other URLs for accessing the files :
-    - <https://gateway.ipfs.io/ipfs/bafybeihwim3cdz75h5vqmuzwivjbjjzblxpfrc2esita2bjfvq7g4obdw4/www/js>
-    - <https://cloudflare-ipfs.com/ipfs/bafybeiaruza327smy5rieaq6jr4imyab2kgxetq67o2rcvyne2brjnfeau/js>
+    - <https://gateway.ipfs.io/ipfs/bafybeidaegcwspxt3yxq4tzg5gvadpnmnc2q6otz6654yvew7xdawrho4a/www/js>
+    - <https://cloudflare-ipfs.com/ipfs/bafybeidzcmpcemtyw5m5cqt73w4mm6q53mr3clp2ztm6eotfdwf6xppoai/js>
     - <https://iglake.github.io/js>
 
 [![](https://data.jsdelivr.com/v1/package/gh/iglake/js/badge)](https://www.jsdelivr.com/package/gh/iglake/js)
 
 ### Examples:
 
- * collaborative framapad "web-page" : <http://ipfs.io/ipfs/bafybeiaruza327smy5rieaq6jr4imyab2kgxetq67o2rcvyne2brjnfeau/js/examples/frama.htm>
+ * collaborative framapad "web-page" : <http://ipfs.io/ipfs/bafybeidzcmpcemtyw5m5cqt73w4mm6q53mr3clp2ztm6eotfdwf6xppoai/js/examples/frama.htm>
  *  or <https://iglake.github.io/js/examples/frama.htm>
 
  *  ipfs node detection : <https://iglake.github.io/js/examples/ipfsdetect.htm>
 
  * misc : about [how](https://www.one-tab.com/page/XuCCeOg2SkSSwTD8JzvWfw) to publish on GitHub (see <https://ipfs.io/ipfs/QmX87y253JbdLWUcd5Qdd3HaBYpoiqr8wVUYQHiuNYHAG2/>)
 
- * blockRing™ hash : qm=[QmXch4vbceFt64HVbFbVwMmyxz1ntWdK29MrMdMhQQjAaA](http://gateway.ipfs.io/ipfs/QmXch4vbceFt64HVbFbVwMmyxz1ntWdK29MrMdMhQQjAaA)
+ * blockRing™ hash : qm=[QmVXa1LUjgwWGDLGcWfJmKF4PsA4XTG1JsCUmgXBXRAHkz](http://gateway.ipfs.io/ipfs/QmVXa1LUjgwWGDLGcWfJmKF4PsA4XTG1JsCUmgXBXRAHkz)
 
 ### Usage:
 
 ```html
-<!-- previous revision: 5506bff
-<script src="https://cdn.statically.io/gh/iglake/js/5506bff/dist/inc-fp.js">
+<!-- previous revision: 80f56e8
+<script src="https://cdn.statically.io/gh/iglake/js/80f56e8/dist/inc-fp.js">
 -->
 <!-- current revision: latest : https://github.com/iglake/js/commit/master -->
 <script src="https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc-fp.min.js">
@@ -41,13 +43,13 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 
 [gh]: http://github.com/iglake/
 [jd]: https://www.jsdelivr.com/package/gh/iglake/js
-[cf]: https://cloudflare-ipfs.com/ipfs/bafybeiaruza327smy5rieaq6jr4imyab2kgxetq67o2rcvyne2brjnfeau/js
+[cf]: https://cloudflare-ipfs.com/ipfs/bafybeidzcmpcemtyw5m5cqt73w4mm6q53mr3clp2ztm6eotfdwf6xppoai/js
 
 clone it with the following command :
   ```git clone https://github.com/iglake/js.git```
 
 ### Last fix ...
 
-- minor fix in the publishing script (msg)
-- added : ```git push --delete origin "v1.4.3"``` to remove pre-existing tag v1.4.3
-- added : domain substitution in url for inc-md.js
+- fix deletion of last fix lines in publish.sh script
+- suppress the www. from domain name
+- load a config.json and substitute de keyword from the div.md
