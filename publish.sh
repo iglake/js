@@ -63,7 +63,8 @@ git tag -f -a $ver -m "tagging $gitid on $date"
 #echo gitid: ${gitid:0:9} # this is bash!
 echo gitid: $gitid | cut -b 1-14
 echo $tic: $gitid >> revs.log
-echo -e "/### Last fix/+2,\$d\nw" | ed README.txt
+#cho -e "1\n/### Last fix/+2,\$ d\nwq" | ed README.txt
+echo -e "$\n?Last fix?+2,$ d\nwq" | ed README.txt
 # test if tag $ver exist ...
 if git ls-remote --tags | grep "$ver"; then
 git push --delete origin "$ver"

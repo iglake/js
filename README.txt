@@ -50,7 +50,4 @@ clone it with the following command :
 
 ### Last fix ...
 
-- fix deletion of last fix lines in publish.sh script
-- suppress the www. from domain name
-- load a config.json and substitute de keyword from the div.md
-- allow %keyword% substitution in config.json file (inc-md.js)
+- fixing buf is not defined erro (inc-md.js:64)

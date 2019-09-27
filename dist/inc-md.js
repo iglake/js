@@ -33,6 +33,7 @@ var url = document.getElementsByClassName('include')[0].href;
 
     request.onload = function () {
        var resp = request.response.toString()
+       var buf = resp.replace(/%url%/g,url);
           if (document.location.href.match(/\.htm#md/) ) {
              document.getElementById('md').innerHTML = resp;
           }
@@ -48,7 +49,6 @@ var url = document.getElementsByClassName('include')[0].href;
              if (config.status == 200) {
                 var json = JSON.parse(config.response)
                 console.log(json)
-                buf = resp.replace(/%url%/g,url);
                 for(let key in json) {
                    let rex = RegExp('%'+key+'%','g');
                    buf = buf.replace(rex,json[key]);
