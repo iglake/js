@@ -32,7 +32,7 @@ const get_url = (e,i,u) => {
 }
 
 // inject *.js :
-//  showdown.js ...
+// showdown.js ...
 var script = document.createElement('script');
     script.setAttribute('type','text/javascript');
     script.src = 'https://cdn.jsdelivr.net/npm/showdown@latest/dist/showdown.min.js';
@@ -52,9 +52,9 @@ for(var i=0; i<elems.length; i++) {
 function render(e,i,md) {
           md = md.replace(/\\\n/g,'<br>');
           md = md.replace(/%url%/g,loc);
-          md = md.replace(/%domain%/g,document.location.hostname);
+          md = md.replace(/%hostname%/g,document.location.hostname);
           md = md.replace(/%origin%/g,document.location.origin);
-          md = md.replace(/%gdid%/g,e.getAttribute('data-gdid'));
+          // md = md.replace(/%gdid%/g,e.getAttribute('data-gdid'));
           md = md.replace(/{{DUCK}}/g,'http://duckduckgo.com/?q');
 
    if (! document.location.href.match(/#/) ) {

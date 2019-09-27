@@ -36,29 +36,29 @@ var url = document.getElementsByClassName('include')[0].href;
           if (document.location.href.match(/\.htm#md/) ) {
              document.getElementById('md').innerHTML = resp;
           }
-          buf = resp.replace(/%loc%/g,loc);
-          buf = buf.replace(/%domain%/g,map['domain']);
-          buf = buf.replace(/%hostname%/g,document.location.hostname);
-          buf = buf.replace(/%origin%/g,document.location.origin);
-          buf = buf.replace(/%url%/g,url);
-             //buf = buf.replace(/%md5%/g,e.getAttribute('md5'));
 
           // load config.json file
           let config = new XMLHttpRequest();
           let s = url.lastIndexOf('/') + 1;
           let dir = url.substring(0,s);
-          //console.log('cfg: '+dir+'config.json');
+          console.log('cfg: '+dir+'config.json');
           config.open('GET', dir + 'config.json');
           config.send();
           config.onload = function () {
              if (config.status == 200) {
                 var json = JSON.parse(config.response)
                 console.log(json)
+                buf = resp.replace(/%url%/g,url);
                 for(let key in json) {
-                let rex = RegExp('%'+key+'%','g')
-                //console.log(rex);
-                buf = buf.replace(rex,json[key]);
+                   let rex = RegExp('%'+key+'%','g');
+                   buf = buf.replace(rex,json[key]);
+                   //console.log(rex)
                 }
+                buf = buf.replace(/%loc%/g,loc);
+                buf = buf.replace(/%domain%/g,map['domain']);
+                buf = buf.replace(/%hostname%/g,document.location.hostname);
+                buf = buf.replace(/%origin%/g,document.location.origin);
+                //buf = buf.replace(/%md5%/g,e.getAttribute('md5'));
              }
 
              buf = buf.replace(/\\\n/g,'<br>');
