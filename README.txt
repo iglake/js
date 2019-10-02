@@ -50,4 +50,3 @@ clone it with the following command :
 
 ### Last fix ...
 
-- fixing buf is not defined erro (inc-md.js:64)

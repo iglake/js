@@ -2,9 +2,8 @@
 
 var script = document.createElement('script');
     script.setAttribute('type','text/javascript');
-    script.src = 'https://cdn.jsdelivr.net/npm/showdown';
-    script.src = 'http://ipfs.blockringtm.ml/ipfs/QmeyFRD9ffRzTn4QuTWvxyQAUjEhBpF2NWZKYuYwsrmkye/showdown.min.js';
-    script.src = 'http://127.0.0.1:8080/ipfs/QmeyFRD9ffRzTn4QuTWvxyQAUjEhBpF2NWZKYuYwsrmkye/showdown.min.js';
+    script.src = 'http://127.0.0.1:8080/ipfs/QmRYcng6RgZQQaeYbeVs1rTsrHW29qfBYw3NBAUjvNc3tr/showdown.min.js';
+    script.src = 'https://cdn.jsdelivr.net/npm/showdown@1.9/dist/showdown.min.js';
 
     document.getElementsByTagName("head")[0].appendChild(script);
     script.onload = function () {
