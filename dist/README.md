@@ -28,13 +28,13 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 
  * misc : about [how](https://www.one-tab.com/page/XuCCeOg2SkSSwTD8JzvWfw) to publish on GitHub (see <https://ipfs.io/ipfs/QmX87y253JbdLWUcd5Qdd3HaBYpoiqr8wVUYQHiuNYHAG2/>)
 
- * blockRing™ hash : qm=[zdj7WejgXzpj55NBNyw5bEZo97sGMQDVbw6fAx4sjsgbqrzZz](http://gateway.ipfs.io/ipfs/zdj7WejgXzpj55NBNyw5bEZo97sGMQDVbw6fAx4sjsgbqrzZz)
+ * blockRing™ hash : qm=[zdj7WZX5krvbmm2qFia7GUFyuRnnXXdXqSxMkPm1RSnWADpwd](http://gateway.ipfs.io/ipfs/zdj7WZX5krvbmm2qFia7GUFyuRnnXXdXqSxMkPm1RSnWADpwd)
 
 ### Usage:
 
 ```html
-<!-- previous revision: 8ad7ff1
-<script src="https://cdn.statically.io/gh/iglake/js/8ad7ff1/dist/inc-fp.js">
+<!-- previous revision: ac3155b
+<script src="https://cdn.statically.io/gh/iglake/js/ac3155b/dist/inc-fp.js">
 -->
 <!-- current revision: latest : https://github.com/iglake/js/commit/master -->
 <script src="https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc-fp.min.js">
@@ -50,4 +50,5 @@ clone it with the following command :
 
 ### Last fix ...
 
- - DNS data substitution via dns.js and config.js
+ - remove deletion of *.org, replace with *.*~*
+ - fixed domain = '127...' !

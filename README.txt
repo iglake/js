@@ -50,5 +50,4 @@ clone it with the following command :
 
 ### Last fix ...
 
- - remove deletion of *.org, replace with *.*~*
- - fixed domain = '127...' !
+ - dangling closing comment marker
