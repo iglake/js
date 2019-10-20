@@ -14,7 +14,7 @@ rsync -aub $WWW/js/*.js $HOME/GITrepo/iglake/cssjs/js/src/
 rsync -Caub $HOME/GITrepo/iglake/cssjs/js/src/*.js $WWW/js/
 
 # no examples is in dist !
-qm=$(ipfs add -Q -r -w src/*.js README.md qm.log --cid-base=base58btc)
+qm=$(ipfs add -Q -r -w src/*.js README.md qm.log)
 #qm=$(ipfs add -Q -r -w src/*.js README.md examples qm.log)
 tic=$(date +%s)
 echo $tic: $qm >> qm.log
@@ -30,12 +30,7 @@ find . -name \*.org -delete
 find . -name \*~ -delete
 ipfs get -o dist /ipfs/$qm
 
-if ipfs files stat /root/www --hash 1>/dev/null; then
-ipfs files mkdir -p /root/www
-ipfs files chcid --cid-version 0 /root/www
-else
 ipfs files rm -r /root/www/js
-fi
 ipfs files cp /ipfs/$qm /root/www/js
 echo -n "www: "
 www=$(ipfs files stat /root/www --hash)
@@ -48,12 +43,12 @@ echo "info: /ipfs/$www/js"
 echo ipns: http://127.0.0.1:8080/ipns/$key
 ipfs name publish --allow-offline --key=$symb /ipfs/$www/js &
 
+
 echo -n "rootkey: "
 rootkey=$(ipfs files stat /root --hash)
 echo https://gateway.ipfs.io/ipfs/$rootkey/www/js
 echo cf: https://$ww32.cf-ipfs.com/js
 echo cdn: https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc.min.js
-# update README ...
 cat README.txt | sed -e "s/\$ver/$ver/g" -e "s/\$gitid/$gitid/g" \
     -e "s/\$qm/$qm/g" -e "s/\$rootkey/$rootkey/" -e "s/\$www/$www/" > README.md
 else
