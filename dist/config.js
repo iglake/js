@@ -20,7 +20,7 @@ let e = document.getElementsByClassName('url')[0];
 if (typeof(e) != 'undefined') {
   url = e.href;
 } else {
-  url = 'http://ipfs.blockringtm.ml';
+  url = 'http://ipfs.blockringtm.ml/';
 }
 
 function callback(tag) {
@@ -33,7 +33,7 @@ function callback(tag) {
       txt = decode(rr[i]['txtdata']);
       console.log('txt['+i+']='+txt);
     } else {
-      txt = '{"name":"json config record","status":"empty","note":"pass it forward!","framaid":"jsonconf","qm":"z6cYNbecZSFzLjbSimKuibtdpGt7DAUMMt46aKQNdwfs"}'
+      txt = '{"title":"JSon Config Record","name":"JSonCFG","status":"empty","note":"pass it forward!","framaid":"jsonconf","qm":"z6cYNbecZSFzLjbSimKuibtdpGt7DAUMMt46aKQNdwfs"}'
     }
       map = JSON.parse(txt);
       console.log(map);
@@ -46,6 +46,8 @@ function callback(tag) {
    }
 
    var buf = bod.innerHTML;
+       buf = buf.replace(/%ip%/g,json.ip);
+       buf = buf.replace(/%tics%/g,json.tics);
        buf = buf.replace(/%url%/g,url);
        buf = buf.replace(/%loc%/g,loc);
        buf = buf.replace(/%domain%/g,domain);

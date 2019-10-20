@@ -1,15 +1,13 @@
 // assumed https://cdn.jsdelivr.net/npm/showdown is loaded
 
 console.log(document.location)
-let domain = document.location.hostname
-    domain = domain.replace(/www./,'');
-var map = {'domain':domain }; // substitution map
 
-var loc = document.location.toString();
-    loc = loc.replace(/#.*/,'');
+let map = {'domain': document.location.hostname.replace(/www./,'')}; // substitution map
 
 var request = new XMLHttpRequest();
 var url = document.getElementsByClassName('include')[0].href;
+console.log('url: '+url);
+
     if ( url.match(/#$/) ) {
     // if ∃ fragment ⇒ take the basename of url and add .md extension
       let p = url.lastIndexOf('/') + 1;
@@ -19,8 +17,8 @@ var url = document.getElementsByClassName('include')[0].href;
       let matches = url.match(/%(\w+)%/);
       let rex = new RegExp('%'+matches[1]+'%');
       url = url.replace(rex,map[matches[1]]);
-      console.log('url: '+url)
     }
+    console.log('url: '+url)
     // update html for info
       var elems = document.getElementsByClassName('include');
       elems[0].innerHTML = url;
@@ -42,6 +40,8 @@ var url = document.getElementsByClassName('include')[0].href;
           let config = new XMLHttpRequest();
           let s = url.lastIndexOf('/') + 1;
           let dir = url.substring(0,s);
+          console.log('url: '+url);
+          console.log('dir: '+dir);
           console.log('cfg: '+dir+'config.json');
           config.open('GET', dir + 'config.json');
           config.send();
@@ -54,8 +54,10 @@ var url = document.getElementsByClassName('include')[0].href;
                    buf = buf.replace(rex,json[key]);
                    //console.log(rex)
                 }
+                let domain = document.location.hostname.replace(/www./,'');
+                let loc = document.location.toString().replace(/#.*/,'');
                 buf = buf.replace(/%loc%/g,loc);
-                buf = buf.replace(/%domain%/g,map['domain']);
+                buf = buf.replace(/%domain%/g,domain);
                 buf = buf.replace(/%hostname%/g,document.location.hostname);
                 buf = buf.replace(/%origin%/g,document.location.origin);
                 //buf = buf.replace(/%md5%/g,e.getAttribute('md5'));
