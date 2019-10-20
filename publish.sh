@@ -26,8 +26,7 @@ echo $ver > VERSION
 
 
 rm -rf dist/*
-find . -name \*.org -delete
-find . -name \*~ -delete
+find . -name "*.*~*" -delete
 ipfs get -o dist /ipfs/$qm
 
 if ipfs files stat /root/www --hash 1>/dev/null; then

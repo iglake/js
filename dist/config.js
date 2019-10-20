@@ -1,5 +1,14 @@
 /* this js script that the _json.%domain% DNSi TXT record 
    and use it as a map to substitute keywords ...
+
+ usage :
+
+<script src=https://cdn.jsdelivr.net/gh/iglake/js@1.6/dist/dns.js></script>
+<script src=https://cdn.jsdelivr.net/gh/iglake/js@1.6/dist/config.js ></script>
+DNS.Query('_json.'+domain,'TXT', callback('body'))
+
+*/
+
  */
 
 var hostname = document.location.hostname;
@@ -16,24 +25,28 @@ if (typeof(e) != 'undefined') {
   url = 'http://ipfs.blockringtm.ml';
 }
 
-if (domain = '127.0.0.1') {
- DNS.Query('_json.blockringtm.ml','TXT', callback('body'))
-} else {
- DNS.Query('_json.'+domain,'TXT', callback('body'))
-}
-
 function callback(tag) {
    var display = function(json) {
    var map = [];
    console.log(json);
    var rr = json.rr
    for(let i=0; i<rr.length; i++) {
-    txt = decode(rr[i]['txtdata']);
-    console.log('txt['+i+']='+txt);
-    map = JSON.parse(txt);
-    console.log(map);
+    if ( json['type'] == 'TXT' ) {
+      txt = decode(rr[i]['txtdata']);
+      console.log('txt['+i+']='+txt);
+    } else {
+      txt = '{"name":"json config record","status":"empty","note":"pass it forward!","framaid":"jsonconf","qm":"z6cYNbecZSFzLjbSimKuibtdpGt7DAUMMt46aKQNdwfs"}'
+    }
+      map = JSON.parse(txt);
+      console.log(map);
    }
-   let bod = document.getElementsByTagName('tag')[0];
+   console.log('tag: '+tag);
+   let head = document.getElementsByTagName('head')[0];
+   let bod = document.getElementsByTagName(tag)[0];
+   if ( typeof(bod) == 'undefined') {
+       bod = document.getElementById(tag);
+   }
+
    var buf = bod.innerHTML;
        buf = buf.replace(/%url%/g,url);
        buf = buf.replace(/%loc%/g,loc);
@@ -46,10 +59,11 @@ function callback(tag) {
    for (let key in map) {
       let rex = RegExp('%'+key+'%','g');
       buf = buf.replace(rex,map[key]);
+      head.innerHTML = head.innerHTML.replace(rex,map[key]);
    }
 
    bod.innerHTML = buf; // rewrite the body !
-
+   }
    return display
 }
 

@@ -50,4 +50,5 @@ clone it with the following command :
 
 ### Last fix ...
 
- - DNS data substitution via dns.js and config.js
+ - remove deletion of *.org, replace with *.*~*
+ - fixed domain = '127...' !
