@@ -28,13 +28,13 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 
  * misc : about [how](https://www.one-tab.com/page/XuCCeOg2SkSSwTD8JzvWfw) to publish on GitHub (see <https://ipfs.io/ipfs/QmX87y253JbdLWUcd5Qdd3HaBYpoiqr8wVUYQHiuNYHAG2/>)
 
- * blockRing™ hash : qm=[zdj7WgcRxcn9ysh7HhgiuoFjTheBYm6LcEeL8vLfatmTg3Rvc](http://gateway.ipfs.io/ipfs/zdj7WgcRxcn9ysh7HhgiuoFjTheBYm6LcEeL8vLfatmTg3Rvc)
+ * blockRing™ hash : qm=[zdj7Wg7dYMfGfqANcov8h53oBNuG9uqbw5aJ247fgM9kmF64N](http://gateway.ipfs.io/ipfs/zdj7Wg7dYMfGfqANcov8h53oBNuG9uqbw5aJ247fgM9kmF64N)
 
 ### Usage:
 
 ```html
-<!-- previous revision: 00dabd5
-<script src="https://cdn.statically.io/gh/iglake/js/00dabd5/dist/inc-fp.js">
+<!-- previous revision: 6cb9d51
+<script src="https://cdn.statically.io/gh/iglake/js/6cb9d51/dist/inc-fp.js">
 -->
 <!-- current revision: latest : https://github.com/iglake/js/commit/master -->
 <script src="https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc-fp.min.js">
@@ -50,4 +50,4 @@ clone it with the following command :
 
 ### Last fix ...
 
- - dangling closing comment marker
+ - few fixes ...
