@@ -53,5 +53,4 @@ clone it with the following command :
 
 ### Last fix ...
 
- - fixed link undefined in favicon.js
- - added substitution on a badges div for %ip% and %name%
+ - added a %date% to the config.js from passed unix_timestamp (json.tics)
