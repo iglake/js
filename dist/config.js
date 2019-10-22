@@ -9,7 +9,7 @@
 
 <script src=https://cdn.jsdelivr.net/gh/iglake/js@1.6/dist/dns.js></script>
 <script src=https://cdn.jsdelivr.net/gh/iglake/js@1.6/dist/config.js ></script>
-DNS.Query('_json.'+domain,'TXT', callback('body'))
+<script> DNS.Query('_json.'+domain,'TXT', callback('body')) </script>
 
 */
 
@@ -35,8 +35,12 @@ function callback(tag) {
       map = JSON.parse(txt);
       console.log(map);
    }
-   console.log('tag: '+tag);
+   let badges = document.getElementById('badges');
+      badges.innerHTML = badges.innerHTML.replace(/%ip%/g,json.ip);
+      badges.innerHTML = badges.innerHTML.replace(/%name%/g,map['name']);
+
    let head = document.getElementsByTagName('head')[0];
+   //console.log('tag: '+tag);
    let bod = document.getElementsByTagName(tag)[0];
    if ( typeof(bod) == 'undefined') {
        bod = document.getElementById(tag);

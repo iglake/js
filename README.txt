@@ -53,4 +53,5 @@ clone it with the following command :
 
 ### Last fix ...
 
- - try out some RCS tags
+ - fixed link undefined in favicon.js
+ - added substitution on a badges div for %ip% and %name%

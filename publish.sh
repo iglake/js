@@ -1,6 +1,7 @@
 #
 
 # vim: nospell
+set -x
 
 symb=jscript
 key=$(ipfs key list -l | grep -w $symb | cut -d' ' -f 1)

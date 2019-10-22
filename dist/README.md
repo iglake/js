@@ -13,31 +13,31 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 [2]: https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc-fp.js
 
 
-[![version](https://badge.fury.io/gh/iglake%2Fcssjs.svg)](https://badge.fury.io/gh/iglake%2Fcssjs)
 
  * other URLs for accessing the files :
-    - <https://gateway.ipfs.io/ipfs/bafybeiapwhp7xcthdiobn4elanrl5f6ejp47f2dq3pnw2zx7ljsmqosns4/www/js>
-    - <https://cloudflare-ipfs.com/ipfs/QmPTALHAkz1BUNR72MU7YGcLuxRJcCU1gPyHHUKiM1WQJm/js>
+    - <https://gateway.ipfs.io/ipfs/bafybeifqs6gsflysv6xkk5zdeiof474jll4z7y6ig6sl6rqcl52qccfrjq/www/js>
+    - <https://cloudflare-ipfs.com/ipfs/QmZ67vvi44CEpUBMsKBJ7zxh95WSW5rRuPe2HeyNFUARt1/js>
     - <https://iglake.github.io/js>
 
+[![version](https://badge.fury.io/gh/iglake%2Fjs.svg)](https://badge.fury.io/gh/iglake%2Fjs)
 [![](https://data.jsdelivr.com/v1/package/gh/iglake/js/badge)](https://www.jsdelivr.com/package/gh/iglake/js)
 
 ### Examples:
 
- * collaborative framapad "web-page" : <http://ipfs.io/ipfs/QmPTALHAkz1BUNR72MU7YGcLuxRJcCU1gPyHHUKiM1WQJm/js/examples/frama.htm>
+ * collaborative framapad "web-page" : <http://ipfs.io/ipfs/QmZ67vvi44CEpUBMsKBJ7zxh95WSW5rRuPe2HeyNFUARt1/js/examples/frama.htm>
  *  or <https://iglake.github.io/js/examples/frama.htm>
 
  *  ipfs node detection : <https://iglake.github.io/js/examples/ipfsdetect.htm>
 
  * misc : about [how](https://www.one-tab.com/page/XuCCeOg2SkSSwTD8JzvWfw) to publish on GitHub (see <https://ipfs.io/ipfs/QmX87y253JbdLWUcd5Qdd3HaBYpoiqr8wVUYQHiuNYHAG2/>)
 
- * blockRing™ hash : qm=[zdj7WeHCBLT1vbha169vzkWzszHdiFp31TAbY5VpC1A5GUVTo](http://gateway.ipfs.io/ipfs/zdj7WeHCBLT1vbha169vzkWzszHdiFp31TAbY5VpC1A5GUVTo)
+ * blockRing™ hash : qm=[zdj7WkT88zDBcKAViZ9aWXQqW9VgomkrdDtJ9viXma8bXjLhe](http://gateway.ipfs.io/ipfs/zdj7WkT88zDBcKAViZ9aWXQqW9VgomkrdDtJ9viXma8bXjLhe)
 
 ### Usage:
 
 ```html
-<!-- previous revision: 3fc4db2
-<script src="https://cdn.statically.io/gh/iglake/js/3fc4db2/dist/inc-fp.js">
+<!-- previous revision: 557826a
+<script src="https://cdn.statically.io/gh/iglake/js/557826a/dist/inc-fp.js">
 -->
 <!-- current revision: latest : https://github.com/iglake/js/commit/master -->
 <script src="https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc-fp.min.js">
@@ -46,12 +46,11 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 
 [gh]: http://github.com/iglake/
 [jd]: https://www.jsdelivr.com/package/gh/iglake/js
-[cf]: https://cloudflare-ipfs.com/ipfs/QmPTALHAkz1BUNR72MU7YGcLuxRJcCU1gPyHHUKiM1WQJm/js
+[cf]: https://cloudflare-ipfs.com/ipfs/QmZ67vvi44CEpUBMsKBJ7zxh95WSW5rRuPe2HeyNFUARt1/js
 
 clone it with the following command :
   ```git clone https://github.com/iglake/js.git```
 
 ### Last fix ...
 
- - republish as ipfs crashed leading to an empty dist !
- - therefore fix publish.sh
+ - try out some RCS tags
