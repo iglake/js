@@ -13,13 +13,13 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 [2]: https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc-fp.js
 
 
-[![version](https://badge.fury.io/gh/iglake%2Fcssjs.svg)](https://badge.fury.io/gh/iglake%2Fcssjs)
 
  * other URLs for accessing the files :
     - <https://gateway.ipfs.io/ipfs/$rootkey/www/js>
     - <https://cloudflare-ipfs.com/ipfs/$www/js>
     - <https://iglake.github.io/js>
 
+[![version](https://badge.fury.io/gh/iglake%2Fjs.svg)](https://badge.fury.io/gh/iglake%2Fjs)
 [![](https://data.jsdelivr.com/v1/package/gh/iglake/js/badge)](https://www.jsdelivr.com/package/gh/iglake/js)
 
 ### Examples:
@@ -53,5 +53,4 @@ clone it with the following command :
 
 ### Last fix ...
 
- - republish as ipfs crashed leading to an empty dist !
- - therefore fix publish.sh
+ - try out some RCS tags

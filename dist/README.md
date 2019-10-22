@@ -16,22 +16,22 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 [![version](https://badge.fury.io/gh/iglake%2Fcssjs.svg)](https://badge.fury.io/gh/iglake%2Fcssjs)
 
  * other URLs for accessing the files :
-    - <https://gateway.ipfs.io/ipfs/bafybeih5zrgdbhgqjymcdq6cmwalmf6wzzzu54sc2bch23vqy4n66xnbpm/www/js>
-    - <https://cloudflare-ipfs.com/ipfs/QmbKpGMphrgC95uyr3zHQmhZaDZLs8dbr2q69P2T6syS8K/js>
+    - <https://gateway.ipfs.io/ipfs/bafybeiapwhp7xcthdiobn4elanrl5f6ejp47f2dq3pnw2zx7ljsmqosns4/www/js>
+    - <https://cloudflare-ipfs.com/ipfs/QmPTALHAkz1BUNR72MU7YGcLuxRJcCU1gPyHHUKiM1WQJm/js>
     - <https://iglake.github.io/js>
 
 [![](https://data.jsdelivr.com/v1/package/gh/iglake/js/badge)](https://www.jsdelivr.com/package/gh/iglake/js)
 
 ### Examples:
 
- * collaborative framapad "web-page" : <http://ipfs.io/ipfs/QmbKpGMphrgC95uyr3zHQmhZaDZLs8dbr2q69P2T6syS8K/js/examples/frama.htm>
+ * collaborative framapad "web-page" : <http://ipfs.io/ipfs/QmPTALHAkz1BUNR72MU7YGcLuxRJcCU1gPyHHUKiM1WQJm/js/examples/frama.htm>
  *  or <https://iglake.github.io/js/examples/frama.htm>
 
  *  ipfs node detection : <https://iglake.github.io/js/examples/ipfsdetect.htm>
 
  * misc : about [how](https://www.one-tab.com/page/XuCCeOg2SkSSwTD8JzvWfw) to publish on GitHub (see <https://ipfs.io/ipfs/QmX87y253JbdLWUcd5Qdd3HaBYpoiqr8wVUYQHiuNYHAG2/>)
 
- * blockRing™ hash : qm=[zdj7WdevNHpxVs8RMgQy8xKmw63N8FfZwhsXKmt3xx4TCLUFb](http://gateway.ipfs.io/ipfs/zdj7WdevNHpxVs8RMgQy8xKmw63N8FfZwhsXKmt3xx4TCLUFb)
+ * blockRing™ hash : qm=[zdj7WeHCBLT1vbha169vzkWzszHdiFp31TAbY5VpC1A5GUVTo](http://gateway.ipfs.io/ipfs/zdj7WeHCBLT1vbha169vzkWzszHdiFp31TAbY5VpC1A5GUVTo)
 
 ### Usage:
 
@@ -46,7 +46,7 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 
 [gh]: http://github.com/iglake/
 [jd]: https://www.jsdelivr.com/package/gh/iglake/js
-[cf]: https://cloudflare-ipfs.com/ipfs/QmbKpGMphrgC95uyr3zHQmhZaDZLs8dbr2q69P2T6syS8K/js
+[cf]: https://cloudflare-ipfs.com/ipfs/QmPTALHAkz1BUNR72MU7YGcLuxRJcCU1gPyHHUKiM1WQJm/js
 
 clone it with the following command :
   ```git clone https://github.com/iglake/js.git```
