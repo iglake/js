@@ -29,7 +29,8 @@ rm -rf dist/*
 find . -name "*.*~*" -delete
 ipfs get -o dist /ipfs/$qm
 
-if ipfs files stat /root/www --hash 1>/dev/null; then
+
+if ! ipfs files stat /root/www --hash 1>/dev/null; then
 ipfs files mkdir -p /root/www
 ipfs files chcid --cid-version 0 /root/www
 else

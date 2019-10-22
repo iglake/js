@@ -53,4 +53,5 @@ clone it with the following command :
 
 ### Last fix ...
 
- - added favicon.js for setting default favicon on websites base on *.location.origin
+ - republish as ipfs crashed leading to an empty dist !
+ - therefore fix publish.sh
