@@ -37,7 +37,7 @@ function callback(tag) {
       console.log(map)
    }
    let badges = document.getElementById('badges')
-   if (typeof(badges) != 'undefined') {
+   if (badges) {
       badges.innerHTML = badges.innerHTML.replace(/%ip%/g,json.ip)
       badges.innerHTML = badges.innerHTML.replace(/%name%/g,map['name'])
    }
