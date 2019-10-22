@@ -53,4 +53,3 @@ clone it with the following command :
 
 ### Last fix ...
 
- - added a %date% to the config.js from passed unix_timestamp (json.tics)

@@ -37,9 +37,10 @@ function callback(tag) {
       console.log(map)
    }
    let badges = document.getElementById('badges')
+   if (typeof(badges) != 'undefined') {
       badges.innerHTML = badges.innerHTML.replace(/%ip%/g,json.ip)
       badges.innerHTML = badges.innerHTML.replace(/%name%/g,map['name'])
-
+   }
    let head = document.getElementsByTagName('head')[0]
    //console.log('tag: '+tag)
    let bod = document.getElementsByTagName(tag)[0]
