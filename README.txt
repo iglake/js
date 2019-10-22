@@ -12,6 +12,9 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 [1]: https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc.js
 [2]: https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc-fp.js
 
+
+[![version](https://badge.fury.io/gh/iglake%2Fcssjs.svg)](https://badge.fury.io/gh/iglake%2Fcssjs)
+
  * other URLs for accessing the files :
     - <https://gateway.ipfs.io/ipfs/$rootkey/www/js>
     - <https://cloudflare-ipfs.com/ipfs/$www/js>
@@ -50,4 +53,4 @@ clone it with the following command :
 
 ### Last fix ...
 
- - moved url,domain, variable inside function to avoid namespace conflicts
+ - added favicon.js for setting default favicon on websites base on *.location.origin
