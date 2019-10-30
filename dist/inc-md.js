@@ -35,6 +35,24 @@ console.log('url: '+url);
           if (document.location.href.match(/\.htm#md/) ) {
              document.getElementById('md').innerHTML = resp;
           }
+          let domain = document.location.hostname.replace(/www./,'');
+          let loc = document.location.toString().replace(/#.*/,'');
+          buf = buf.replace(/%loc%/g,loc);
+          buf = buf.replace(/%domain%/g,domain);
+          buf = buf.replace(/%hostname%/g,document.location.hostname);
+          buf = buf.replace(/%origin%/g,document.location.origin);
+          //buf = buf.replace(/%md5%/g,e.getAttribute('md5'));
+          buf = buf.replace(/\\\n/g,'<br>');
+          buf = buf.replace(/{{DUCK}}/g,'http://duckduckgo.com/?q');
+          if (! document.location.href.match(/#/) ) {
+             if ( typeof(showdown) == 'undefined' ) {
+                document.getElementById('rendered').innerHTML = "/!\\ showdown not loaded";
+             } else {
+                var converter = new showdown.Converter();
+                document.getElementById('rendered').innerHTML = converter.makeHtml(buf);
+                document.getElementById('md').style.display = 'none';
+             }
+          }
 
           // load config.json file
           let config = new XMLHttpRequest();
@@ -49,32 +67,15 @@ console.log('url: '+url);
              if (config.status == 200) {
                 var json = JSON.parse(config.response)
                 console.log(json)
+                var bod = document.getElementsByTagName('body')[0];
                 for(let key in json) {
                    let rex = RegExp('%'+key+'%','g');
-                   buf = buf.replace(rex,json[key]);
+                   bod.innerHTML = bod.innerHTML.replace(rex,json[key]);
                    //console.log(rex)
-                }
-                let domain = document.location.hostname.replace(/www./,'');
-                let loc = document.location.toString().replace(/#.*/,'');
-                buf = buf.replace(/%loc%/g,loc);
-                buf = buf.replace(/%domain%/g,domain);
-                buf = buf.replace(/%hostname%/g,document.location.hostname);
-                buf = buf.replace(/%origin%/g,document.location.origin);
-                //buf = buf.replace(/%md5%/g,e.getAttribute('md5'));
-             }
-
-             buf = buf.replace(/\\\n/g,'<br>');
-             buf = buf.replace(/{{DUCK}}/g,'http://duckduckgo.com/?q');
-
-             if (! document.location.href.match(/#/) ) {
-                if ( typeof(showdown) == 'undefined' ) {
-                   document.getElementById('rendered').innerHTML = "/!\\ showdown not loaded";
-                } else {
-                   var converter = new showdown.Converter();
-                   document.getElementById('rendered').innerHTML = converter.makeHtml(buf);
-                   document.getElementById('md').style.display = 'none';
                 }
              }
           }
+
+
     }
 

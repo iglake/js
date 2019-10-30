@@ -53,4 +53,4 @@ clone it with the following command :
 
 ### Last fix ...
 
- - fixed error on when badges == null (config.js)
+ - merged site config via DNS or jsonFile
