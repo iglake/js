@@ -53,4 +53,4 @@ clone it with the following command :
 
 ### Last fix ...
 
- - merged site config via DNS or jsonFile
+ - added substitution in config file name (config.json)

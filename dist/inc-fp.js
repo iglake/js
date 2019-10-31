@@ -1,6 +1,7 @@
 
 var url;
-var buf;
+var frama;
+var digest;
 var hash = 'error';
 var loc = document.location.toString();
     loc = loc.replace(/#.*/,'');
@@ -15,6 +16,8 @@ if(window.location.hash) {
   }
 }
 
+
+
 // inject *.js :
 
 //  md5.js ...
@@ -22,26 +25,23 @@ var script = document.createElement('script');
     script.setAttribute('type','text/javascript');
     script.src = 'https://cdn.jsdelivr.net/gh/iglake/js@master/dist/md5.js';
     script.onload = function () {
-       console.log('dbug: md5 loaded !');
-       var digest =  md5(loc);
-       hash = digest.toString().substr(0,5);
-       var frama = 'pad_' + hash;
-       fpupdate(frama);
-       var buf; // get source file from frama ...
-       var request = new XMLHttpRequest();
-       request.open('GET', url+'/export/txt',true);
-       request.send();
-       request.onload = function () {
+  console.log('dbug: md5 loaded !');
+  digest =  md5(loc);
+  if (typeof(framaid) != undefined) {
+     console.log('framaid: '+framaid);
+     frama = framaid
+  } else {
+    hash = digest.toString().substr(0,5);
+    frama = 'pad_' + hash;
+  }
+  fpupdate(frama);
+  var buf; // get source file from frama ...
+  var request = new XMLHttpRequest();
+      request.open('GET', url+'/export/txt',true);
+      request.send();
+      request.onload = function () {
           console.log('dbug: url:'+url+' loaded !');
-          resp = request.response.toString();
-          buf = resp.replace(/\\\n/g,'<br>');
-          buf = buf.replace('%url%',url);
-          buf = buf.replace('%loc%',loc);
-          buf = buf.replace(/%domain%/g,document.location.hostname);
-          buf = buf.replace(/%origin%/g,document.location.origin);
-          buf = buf.replace(/%hash%/g,hash);
-          buf = buf.replace(/%frama%/g,frama);
-          buf = buf.replace(/{{DUCK}}/g,'http://duckduckgo.com/?q');
+          buf = request.response.toString();
           render(buf);
           if (document.location.href.match(/\.htm#md/) ) {
              document.getElementById('md').innerHTML = resp;
@@ -52,8 +52,8 @@ var script = document.createElement('script');
        request.onerror = function () {
           console.error(request.statusText);
        };
-    }
-    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+  document.getElementsByTagName('head')[0].appendChild(script);
 
 //  showdown.js ...
 var script2 = document.createElement('script');
@@ -63,18 +63,27 @@ var script2 = document.createElement('script');
 
 
 function render(md) {
+   let buf = md.replace(/\\\n/g,'<br>');
+   buf = buf.replace('%url%',url);
+   buf = buf.replace('%loc%',loc);
+   buf = buf.replace('%md5%',digest);
+   buf = buf.replace(/%domain%/g,document.location.hostname);
+   buf = buf.replace(/%origin%/g,document.location.origin);
+   buf = buf.replace(/%hash%/g,hash);
+   buf = buf.replace(/%frama%/g,frama);
+   buf = buf.replace(/{{DUCK}}/g,'http://duckduckgo.com/?q');
    var converter = new showdown.Converter();
    if ( typeof(showdown) == 'undefined' ) {
      document.getElementById('rendered').innerHTML = "/!\\ markdown not loaded";
      script2.onload = function () {
         console.log('dbug: showdown not (yet) loaded !');
         if (! document.location.href.match(/#/) ) {
-           document.getElementById('rendered').innerHTML = converter.makeHtml(md);
+           document.getElementById('rendered').innerHTML = converter.makeHtml(buf);
         }
      }
    } else {
         console.log('dbug: showdown loaded !');
-           document.getElementById('rendered').innerHTML = converter.makeHtml(md);
+           document.getElementById('rendered').innerHTML = converter.makeHtml(buf);
            document.getElementById('md').style.display = 'none';
    }
    // script.onreadystatechange = function () { }

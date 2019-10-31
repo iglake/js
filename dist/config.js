@@ -23,6 +23,10 @@ var fragment = window.location.hash.substring(1)
 
 
 function getfile(name,callback){ // load config.json file
+  var domain = document.location.hostname.replace(/www./,'');
+  var subdomain = domain.substring(0,domain.lastIndexOf('.'))
+  name = name.replace(/%subdomain%/,subdomain);
+  name = name.replace(/%domain%/,domain);
   console.log('filename:'+name)
   let config = new XMLHttpRequest();
   let s = loc.lastIndexOf('/') + 1;
@@ -36,7 +40,6 @@ function getfile(name,callback){ // load config.json file
         return callback(json);
      } else {
        console.log('status: '+config.status)
-       let domain = document.location.hostname.replace(/www./,'');
        return callback({ "name": "website", "description":"generic website "+domain });
      }
 
