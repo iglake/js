@@ -45,10 +45,10 @@ function getfile(name,callback){ // load config.json file
 
   }
 }
-function getdnsjson(domain) {
+function getdnsjson(domain, callback) {
    let apisvr = 'http://127.0.0.1:8088/repositories/helio';
    if (document.location.hostname != '127.0.0.1') {
-      // apisvr = 'https://iph.heliohost.org';
+      apisvr = 'https://iph.heliohost.org';
    }
    var url = apisvr+'/cgi-bin/dnsquery.pl?fmt=json';
    var request = { Domain: domain, Type: 'TXT' };
@@ -110,8 +110,11 @@ function callback(tag) {
      url = 'http://ipfs.blockringtm.ml/'
    }
 
+   let tics
    if ( typeof(map['tics']) == 'undefined') {
-     tics = (new Date()).getTime() / 1000;
+     tics = (new Date()).getTime() / 1000
+   } else {
+     tics = map['tics']
    }
    let date = pDate(tics)
 

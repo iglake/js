@@ -7,6 +7,9 @@ let map = {'domain': document.location.hostname.replace(/www./,'')}; // substitu
 var request = new XMLHttpRequest();
 var url = document.getElementsByClassName('include')[0].href;
 console.log('url: '+url);
+let tics = (new Date()).getTime() / 1000;
+let date = pDate(tics)
+
 
     if ( url.match(/#$/) ) {
     // if ∃ fragment ⇒ take the basename of url and add .md extension
@@ -37,6 +40,8 @@ console.log('url: '+url);
           }
           let domain = document.location.hostname.replace(/www./,'');
           let loc = document.location.toString().replace(/#.*/,'');
+          buf = buf.replace(/%tics%/g,tics);
+          buf = buf.replace(/%date%/g,date);
           buf = buf.replace(/%loc%/g,loc);
           buf = buf.replace(/%domain%/g,domain);
           buf = buf.replace(/%hostname%/g,document.location.hostname);
@@ -78,4 +83,15 @@ console.log('url: '+url);
 
 
     }
+
+function pDate(tics) {
+  let date = new Date(tics*1000)
+  let year = date.getFullYear()
+  let month = date.getMonth() + 1
+  let day = date.getDate()
+  let hours = date.getHours()
+  let minutes = "0" + date.getMinutes()
+  var dateTime = month+'/'+day+'/'+year+' '+hours + ':' + minutes.substr(-2)
+  return dateTime
+}
 

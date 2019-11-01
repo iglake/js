@@ -53,4 +53,4 @@ clone it with the following command :
 
 ### Last fix ...
 
- - added substitution in config file name (config.json)
+ - switched to iph.heliohost.org for dnsquery.pl (was 127.0.0.1)
