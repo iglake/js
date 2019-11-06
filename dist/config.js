@@ -1,6 +1,6 @@
-/* $Id: config.js 1.7.2 2019/10/28 19:57:07 iggy Exp $
+/* $Id: config.js 1.7.5 2019/11/02 08:53:17 iggy Exp $
 
-   $Revision: v1.7.2 $
+   $Revision: v1.7.5 $
 
    this js script fetch a config file or a DNS TXT record 
    and use the returned json as a map to substitute keywords ...
@@ -25,13 +25,13 @@ var fragment = window.location.hash.substring(1)
 function getfile(name,callback){ // load config.json file
   var domain = document.location.hostname.replace(/www./,'');
   var subdomain = domain.substring(0,domain.lastIndexOf('.'))
+  var dir = loc.substring(0,loc.lastIndexOf('/') + 1);
   name = name.replace(/%subdomain%/,subdomain);
   name = name.replace(/%domain%/,domain);
+  name = name.replace(/%dir%/,dir);
   console.log('filename:'+name)
   let config = new XMLHttpRequest();
-  let s = loc.lastIndexOf('/') + 1;
-  let dir = loc.substring(0,s);
-  config.open('GET', dir + name);
+  config.open('GET', name);
   config.send();
   config.onload = function () {
      if (config.status == 200) {
