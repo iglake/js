@@ -2,8 +2,9 @@
 
 console.log(document.location)
 
-let map = {'domain': document.location.hostname.replace(/www./,'')}; // substitution map
-
+let domain = document.location.hostname.replace(/www./,'')
+let map = {'domain': domain, 'subdomain': domain.substring(0,domain.lastIndexOf('.')) }; // substitution map
+''
 var request = new XMLHttpRequest();
 var url = document.getElementsByClassName('include')[0].href;
 console.log('url: '+url);
@@ -59,14 +60,17 @@ let date = pDate(tics)
              }
           }
 
-          // load config.json file
+          // load page.json file
           let config = new XMLHttpRequest();
           let s = url.lastIndexOf('/') + 1;
+          let d = url.lastIndexOf('.');
           let dir = url.substring(0,s);
+          let jfile = url.substring(s,d) + '.json';
+
           console.log('url: '+url);
           console.log('dir: '+dir);
-          console.log('cfg: '+dir+'config.json');
-          config.open('GET', dir + 'config.json');
+          console.log('cfg: '+jfile');
+          config.open('GET', jfile);
           config.send();
           config.onload = function () {
              if (config.status == 200) {

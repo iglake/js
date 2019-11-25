@@ -51,6 +51,12 @@ a bunch of personal javascripts usable via CDN ([jsdelivr][jd], [cloudflare][cf]
 clone it with the following command :
   ```git clone https://github.com/iglake/js.git```
 
+### Currently working on
+
+[ipfs-mutables.js](http://127.0.0.1:8080/ipfs/QmWxb7Zx27rg8usPFiZR9PmMsisaZrL8HNENCtkiaiLP27/ipfs-mutables.js)
+
+
 ### Last fix ...
 
- - switched to iph.heliohost.org for dnsquery.pl (was 127.0.0.1)
+ - bug in ipfs-mutables !
+ - added %email% to sub.js

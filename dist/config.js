@@ -48,9 +48,12 @@ function getfile(name,callback){ // load config.json file
 function getdnsjson(domain, callback) {
    let apisvr = 'http://127.0.0.1:8088/repositories/helio';
    if (document.location.hostname != '127.0.0.1') {
-      apisvr = 'https://iph.heliohost.org';
    }
    var url = apisvr+'/cgi-bin/dnsquery.pl?fmt=json';
+   if (1) {
+      apisvr = 'https://iph.heliohost.org';
+      url = apisvr+'/cgi-bin/testing.pl/dnsquery.pl?fmt=json';
+   }
    var request = { Domain: domain, Type: 'TXT' };
    fetch(url, { method: "POST",
          headers:{'Content-Type': 'application/json'},
