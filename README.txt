@@ -58,5 +58,4 @@ clone it with the following command :
 
 ### Last fix ...
 
- - bug in ipfs-mutables !
- - added %email% to sub.js
+ - added %search% to sub.js
