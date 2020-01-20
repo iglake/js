@@ -58,4 +58,3 @@ clone it with the following command :
 
 ### Last fix ...
 
- * added dnslink and default to webui in config.js script
