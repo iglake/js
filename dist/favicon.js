@@ -1,15 +1,15 @@
-/* $Revision: v1.8.3 $
+/* $Revision: v0.9.8 $
 
  This javascript set a default favicon based on the origin server of the document
 
 usage: place the ligne below within the <head> tag of your html file
 <script src="https://cdn.jsdelivr.net/gh/iglake/js@latest/dist/favicon.js" crossorigin="anonymous"></script>
 
-
  ~iggyl
  */
 
 let head = document.getElementsByTagName('head')[0]
+const default_icon = 'http://127.0.0.1:8088/favicon.ico') // default icon please set to whatever feels good !
 
 var link;
 var ico_url = document.location.origin + '/favicon.ico'
@@ -27,7 +27,7 @@ if (typeof(link) == 'undefined') {
      link = document.createElement('link')
      link.setAttribute('rel','icon')
      link.setAttribute('type','image/png')
-     link.setAttribute('href','http://127.0.0.1:8088/favicon.ico') // default icon ...
+     link.setAttribute('href',default_icon) // use default icon ...
      document.getElementsByTagName('head')[0].appendChild(link)
 }
 

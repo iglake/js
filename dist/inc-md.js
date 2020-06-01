@@ -4,7 +4,7 @@ console.log(document.location)
 
 let domain = document.location.hostname.replace(/www./,'')
 let map = {'domain': domain, 'subdomain': domain.substring(0,domain.lastIndexOf('.')) }; // substitution map
-''
+
 var request = new XMLHttpRequest();
 var url = document.getElementsByClassName('include')[0].href;
 console.log('url: '+url);
