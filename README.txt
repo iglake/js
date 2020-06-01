@@ -58,3 +58,4 @@ clone it with the following command :
 
 ### Last fix ...
 
+ - fixing old publishing script
