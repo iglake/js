@@ -38,7 +38,8 @@ var script = document.createElement('script')
     script.onload = function () {
        var digest =  md5(ico_url)
        //console.log('ico_url: '+ico_url)
-       var favico = 'https://api.adorable.io/avatar/256/'+digest+'.png';
+       // var favico = 'https://api.adorable.io/avatar/256/'+digest+'.png'; service shutdown !
+       var favico = 'https://api.hello-avatar.com/adorables/256/'+digest+'.png';
        if ( typeof(link.href) != 'undefined') {
          link.href = favico;
        }
