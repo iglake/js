@@ -46,12 +46,12 @@ function getfile(name,callback){ // load config.json file
   }
 }
 function getdnsjson(domain, callback) {
-   let apisvr = 'http://127.0.0.1:8088/repositories/helio';
-   if (document.location.hostname != '127.0.0.1') {
-      apisvr = 'https://iph.heliohost.org';
+   let apisvr = 'https://iph.heliohost.org';
+   if (document.location.hostname == '127.0.0.1') {
+      apisvr = 'http://127.0.0.1:8088/repositories/helio';
    }
    var url = apisvr+'/cgi-bin/dnsquery.pl?fmt=json';
-   if (1) {
+   if (0) {
       apisvr = 'https://iph.heliohost.org';
       url = apisvr+'/cgi-bin/testing.pl/dnsquery.pl?fmt=json';
    }
@@ -119,8 +119,16 @@ function callback(tag) {
      tics = (new Date()).getTime() / 1000
    } else {
      tics = map['tics']
+     delete map['tics']
    }
    let date = pDate(tics)
+   let dnslink
+   if ( typeof(map['dnslink']) == 'undefined') {
+     dnslink = '/ipns/webui.ipfs.io/#/files/'
+   } else {
+     dnslink = map['dnslink']
+     delete map['dnslink']
+   }
 
 
    var buf = bod.innerHTML
@@ -131,7 +139,8 @@ function callback(tag) {
        buf = buf.replace(/%domain%/g,domain)
        buf = buf.replace(/%hostname%/g,hostname)
        buf = buf.replace(/%origin%/g,document.location.origin)
-       buf = buf.replace(/%fragmetn%/g,fragment)
+       buf = buf.replace(/%fragment%/g,fragment)
+       buf = buf.replace(/%dnslink%/g,dnslink)
 
    for (let key in map) {
       let rex = RegExp('%'+key+'%','g')

@@ -58,4 +58,4 @@ clone it with the following command :
 
 ### Last fix ...
 
- - added %search% to sub.js
+ - fixing old publishing script

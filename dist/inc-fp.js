@@ -112,8 +112,10 @@ function fpupdate(frama) {
     console.log('info: fpupdate('+ frama + ') !');
     document.getElementById('template').href = url;
     document.getElementById('rendered').innerHTML = "frama: <a href="+url+">"+url+"</a>";
-    document.getElementsByClassName('include')[0].href = url;
-    document.getElementsByClassName('include')[0].innerHTML = frama;
+    if (typeof(document.getElementsByClassName('include')[0]) != 'undefined')  {
+      document.getElementsByClassName('include')[0].href = url;
+      document.getElementsByClassName('include')[0].innerHTML = frama;
+    } 
 
     if (document.getElementById('edit')) {
       console.log('info: update edit w/ '+ frama + ' !');
